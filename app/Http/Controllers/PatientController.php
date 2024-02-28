@@ -66,16 +66,15 @@ class PatientController extends Controller
      */
     public function destroy(string $id)
     {
-  dd($id);
         patient::findOrFail($id)->delete();
-        return redirect()->route('patients.index');
+
+        return view('patients.index');
     }
 
-    public function confirm(Request $request, patient $patient){
+    public function confirm(Request $request, patient $patient)
+    {
         $patient->states = true;
         $patient->save();
         return redirect()->route('patient.index');
-
     }
-
 }

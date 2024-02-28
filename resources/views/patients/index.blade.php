@@ -47,28 +47,35 @@
                                 </tr>
                             </thead>
                             <tbody>
+
                                 @forelse ($data as $patients)
                                     <tr>
-                                        <td class="py-4"> {{ $patients->name }} </td>
-                                        <td class="py-4"> {{ $patients->mobile }} </td>
+                                        <td class="py-3"> {{ $patients->name }} </td>
+                                        <td class="py-3"> {{ $patients->mobile }} </td>
                                         <td class="py-3"> {{ $patients->address }} </td>
                                         <td class="py-3"> {{ $patients->gender }}</td>
                                         <td class="py-3"> {{ $patients->blad_grup }} </td>
                                         <td class="py-3"> {{ $patients->bod }}</td>
                                         <td class="py-3"> {{ $patients->created_at }}</td>
                                         <td class="py-3"> {{ $patients->states ? ' outdoor' : 'indoor' }}</td>
-                                        <td>
-                                            {{-- data-modal-toggle="edit-button" --}}
-                                            {{-- <a href="#" data-item="" data-modal-toggle="edit-button"
+                                        {{-- <td> --}}
+                                        {{-- data-modal-toggle="edit-button" --}}
+                                        {{-- <a href="#" data-item="" data-modal-toggle="edit-button"
                                                 class="px-4 py-2 edit-button text-white bg-blue-700 rounded-md hover:bg-blue-900">edit</a> --}}
+                                        {{-- </td> --}}
+                                        <td class="py-2 mx-4 px-4">
+                                            <a href="{{ route('patient.confirm', $patients->id) }}"
+                                                class="bg-lime-500 text-white rounded-lg py-2 px-6 hover:bg-lime-600"><i
+                                                    class="fa-solid fa-check"></i>
+                                            </a>
                                         </td>
-                                        <td>
+                                        {{-- <td>
                                             <!-- Modal toggle -->
                                             <div class="flex justify-center m-3">
                                                 <button id="deleteButton" data-modal-toggle="deleteModal"
                                                     class="block text-white  bg-red-700 hover:bg-red-900 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                                                     type="button">
-                                                    Delete
+                                                    <i class="fa-solid fa-trash"></i>
                                                 </button>
                                             </div>
 
@@ -98,31 +105,27 @@
                                                                 clip-rule="evenodd"></path>
                                                         </svg>
                                                         <p class="mb-4 text-gray-500 dark:text-gray-300">Are you sure
-                                                            you confarm to delete this item?</p>
+                                                             delete this patient?</p>
                                                         <div class="flex justify-center items-center space-x-4">
                                                             <button data-modal-toggle="deleteModal" type="button"
                                                                 class="py-2 px-3 text-sm font-medium text-gray-500 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-primary-300 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">
                                                                 No, cancel
                                                             </button>
-                                                            {{-- <form
+                                                            <form
                                                                 class="px-4 py-2 w-7/12 text-white bg-red-700 rounded-md hover:bg-red-900"
                                                                 style="width: 70px;height: 36px;"
-                                                                action="{{ route('patient.destroy',$patients->id) }}"
+                                                                action="{{ route('patient.destroy', $patients->id) }}"
                                                                 method="DELETE">
-                                                                <button type="submit">Delet</button>
                                                                 @csrf
-                                                            </form> --}}
+                                                                <button type="submit">Delet</button>
+                                                            </form>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </td>
+                                        </td> --}}
 
-                                        <td>
-                                            <a href="{{ route('patient.confirm', $patients->id) }}"
-                                                class="bg-lime-500 text-white rounded-lg py-2 px-3 hover:bg-lime-600">Discharge
-                                            </a>
-                                        </td>
+
                     </div>
                 </div>
             </div>

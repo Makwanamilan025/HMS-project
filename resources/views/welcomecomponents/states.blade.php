@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,12 @@
     <title>states</title>
 </head>
 <style></style>
+
 <body>
     @include('layouts.cdn')
     @include('layouts.header')
 
-<div class=" rounded overflow-hidden shadow-lg  hover:shadow-xl mx-auto mt-8 h-24 flex">
+    {{-- <div class=" rounded overflow-hidden shadow-lg  hover:shadow-xl mx-auto mt-8 h-24 flex">
    <div> <img class="w-12 ml-36  " src="https://infyhms-staging.sgp1.cdn.digitaloceanspaces.com/1084/InfyHMS-80.png"    alt="Sunsetin the mountains">
   </div>
 
@@ -19,36 +21,49 @@
             Welcome {{ $users->name}}
 
         </div>
-</div>
+</div> --}}
 
-<div class=" w-[70%] ml-[30%] mt-32  ">
-    <div class="px-4 sm:px-0">
-      <h3 class=" font-semibold leading-7 text-gray-900 text-2xl">Applicant Information</h3>
-      <p class="mt-1 max-w-2xl  leading-6 text-gray-500 text-xl">Personal details and application.</p>
+    <div class="overflow-hidden shadow-lg hover:shadow-xl rounded mx-auto mt-8 h-32 flex">
+        <div> <img class="w-12 ml-36 mt-16 "
+                src="https://infyhms-staging.sgp1.cdn.digitaloceanspaces.com/1084/InfyHMS-80.png"
+                alt="Sunsetin the mountains">
+        </div>
+        <div class="font-bold text-lg mt-20 ml-9">
+            Welcome {{ $users->name }}
+        </div>
     </div>
-    <div class="mt-6 border-t border-gray-100">
-      <dl class="divide-y divide-gray-100">
-        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-          <dt class="text-sm font-medium leading-6 text-gray-900">Full name</dt>
-          <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $appointments->name}}</dd>
+    <div class=" w-[70%] ml-[30%] mt-32  ">
+        <div class="px-4 sm:px-0">
+            <h3 class=" font-semibold leading-7 text-gray-900 text-2xl">Applicant Information</h3>
+            <p class="mt-1 max-w-2xl  leading-6 text-gray-500 text-xl">Personal details and application.</p>
         </div>
-        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-          <dt class="text-sm font-medium leading-6 text-gray-900">Mobile for</dt>
-          <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $appointments->mobile}}</dd>
-        </div>
-        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-          <dt class="text-sm font-medium leading-6 text-gray-900">Email address</dt>
-          <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $users->email}}</dd>
-        </div>
-        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-          <dt class="text-sm font-medium leading-6 text-gray-900">Address</dt>
-          <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $appointments->address}}</dd>
-        </div>
-        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-          <dt class="text-sm font-medium leading-6 text-gray-900">Appointment</dt>
-          <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0 bg-red-400 w-14"><b>{{ $appointments->is_conform ? ' confirm' : 'Pending' }}</b></dd>
-        </div>
-        {{-- <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+        <div class="mt-6 border-t border-gray-100">
+            <dl class="divide-y divide-gray-100">
+                <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                    <dt class="text-sm font-medium leading-6 text-gray-900">Full name</dt>
+                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $appointments->name }}
+                    </dd>
+                </div>
+                <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                    <dt class="text-sm font-medium leading-6 text-gray-900">Mobile for</dt>
+                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $appointments->mobile }}
+                    </dd>
+                </div>
+                <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                    <dt class="text-sm font-medium leading-6 text-gray-900">Email address</dt>
+                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $users->email }}</dd>
+                </div>
+                <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                    <dt class="text-sm font-medium leading-6 text-gray-900">Address</dt>
+                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $appointments->address }}
+                    </dd>
+                </div>
+                <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                    <dt class="text-sm font-medium leading-6 text-gray-900">Appointment</dt>
+                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0 bg-red-400 w-14">
+                        <b>{{ $appointments->is_conform ? ' confirm ' : 'Pending' }}</b></dd>
+                </div>
+                {{-- <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
           <dt class="text-sm font-medium leading-6 text-gray-900">Attachments</dt>
           <dd class="mt-2 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
             <ul role="list" class="divide-y divide-gray-100 rounded-md border border-gray-200">
@@ -83,55 +98,58 @@
             </ul>
           </dd>
         </div> --}}
-      </dl>
-    </div>
-  </div>
-
-  <div class="flex justify-around my-64 ml-48 mr-64">
-
-    <div class="max-w-sm rounded overflow-hidden shadow-lg  hover:shadow-xl">
-        <img class="w-12 ml-36 " src="image\c1.png" alt="Sunset in the mountains">
-        <div class="px-6 py-4">
-            <div class="font-bold text-xl mb-2 text-center">+91 78749 79227</div>
-            <p class="text-gray-700 text-base text-center">
-                Call Today
-            </p>
+            </dl>
         </div>
     </div>
-    <div class="max-w-sm rounded overflow-hidden shadow-lg  hover:shadow-xl">
-        <img class="w-12 ml-36 " src="image\c2.png" alt="Sunset in the mountains">
-        <div class="px-6 py-4">
-            <div class="font-bold text-xl mb-2 text-center">cityhospital@gmail.com
+
+    <div class="flex justify-around my-64 ml-48 mr-64">
+
+        <div
+            class="max-w-sm rounded overflow-hidden shadow-lg  hover:shadow-xl  hover:translate-y-3 hover:bg-slate-100">
+            <img class="w-12 ml-20 " src="image\c1.png" alt="Sunset in the mountains">
+            <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2 text-center">+91 78000 79000</div>
+                <p class="text-gray-700 text-base text-center">
+                    Call Today
+                </p>
             </div>
-            <p class="text-gray-700 text-base text-center">
-                Contact Hospital
-            </p>
         </div>
-    </div>
-    <div class="max-w-sm rounded overflow-hidden shadow-lg  hover:shadow-xl">
-        <img class="w-12 ml-36 " src="image\c3.png" alt="Sunset in the mountains">
-        <div class="px-6 py-4">
-            <div class="font-bold text-xl mb-2 text-center">00:00 to 23:45
-
+        <div
+            class="max-w-sm rounded overflow-hidden shadow-lg  hover:shadow-xl  hover:translate-y-3 hover:bg-slate-100">
+            <img class="w-12 ml-28 " src="image\c2.png" alt="Sunset in the mountains">
+            <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2 text-center">abchospital@gmail.com
+                </div>
+                <p class="text-gray-700 text-base text-center">
+                    Contact Hospital
+                </p>
             </div>
-            <p class="text-gray-700 text-base text-center">
-                Open Hours
-            </p>
         </div>
-    </div>
-    <div class="max-w-sm rounded overflow-hidden shadow-lg hover:shadow-xl">
-        <img class="w-12 ml-36 " src="image\c4.jpg" alt="Sunset in the mountains">
-        <div class="px-6 py-4">
-            <div class="font-bold text-xl mb-2 text-center">304, Atlanta building, near Sudama chowk, Mota Varachha
-            </div>
-            <p class="text-gray-700 text-base text-center">
-                Our Location
-            </p>
-        </div>
-    </div>
+        <div
+            class="max-w-sm rounded overflow-hidden shadow-lg  hover:shadow-xl  hover:translate-y-3 hover:bg-slate-100">
+            <img class="w-12 ml-16 " src="image\c3.png" alt="Sunset in the mountains">
+            <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2 text-center">00:00 to 24:00
 
-</div>
-@include('layouts.footer')
+                </div>
+                <p class="text-gray-700 text-base text-center">
+                    Open Hours
+                </p>
+            </div>
+        </div>
+        <div class="max-w-sm rounded overflow-hidden shadow-lg hover:shadow-xl  hover:translate-y-3 hover:bg-slate-100">
+            <img class="w-12 ml-36 " src="image\c4.jpg" alt="Sunset in the mountains">
+            <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2 text-center">304, Atlanta building, near Sudama chowk, Mota Varachha
+                </div>
+                <p class="text-gray-700 text-base text-center">
+                    Our Location
+                </p>
+            </div>
+        </div>
+
+    </div>
+    @include('layouts.footer')
 </body>
-</html>
 
+</html>

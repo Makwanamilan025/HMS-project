@@ -50,11 +50,11 @@ Route::get('/contect', function () {
 })->name('contect');
 
 
-
 //route fore states
 
 Route::get('/states', [statesController::class, 'index'])->name('states');
 Route::get('/create', [statesController::class, 'create'])->name('/states');
+
 
 //Appointments Controller
 
@@ -72,13 +72,13 @@ Route::get('/login', function () {
 Route::middleware('auth')->group(function () {
 
     // route for deshbord
-    Route::get('/deshbord', [DeshbordController::class, 'deshbord'])->name('deshbord');
-    Route::get('/deshbord', [DeshbordController::class, 'bloodbank'])->name('deshbord');
+    Route::get('/deshbord', [DeshbordController::class, 'bloodbank'])->name('bloodbank');
     Route::get('/deshbord', [DeshbordController::class, 'index'])->name('deshbord');
 
 
     //Route for user
     Route::get('/user', [UserController::class, 'index'])->name('user.index');
+    Route::get('/admin', [UserController::class, 'adminprofile'])->name('admin.index');
 
     //Route for doctor
     Route::group(['prefix' => 'doctors', 'as' => 'doctor.'], function () {
@@ -116,7 +116,7 @@ Route::middleware('auth')->group(function () {
     Route::group(['prifix' => 'patients', 'as' => 'patient.'], function () {
         Route::get('/', [PatientController::class, 'index'])->name('index');
         Route::get('/{patient}/confirm', [PatientController::class, 'confirm'])->name('confirm');
-        Route::get('delete/{id}', [PatientController::class, 'destroy'])->name('destroy');
+        Route::get('patient/{id}', [PatientController::class, 'destroy'])->name('destroy');
         // Route::get('delete/{id}', [PatientController::class, 'destroy'])->name('destroy');
     });
 

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet" />
     <title>Appointment</title>
 </head>
 
@@ -24,16 +25,40 @@
         {{-- sidebar end ------------------------------ --}}
 
         <div class="py-12 ">
-            <div class="max-w-[1650px] ml-64 mx-auto sm:px-6 lg:px-8">
+            <div class="max-w-[1600px] ml-64 mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white  shadow-sm sm:rounded-lg">
                     <div class="p-6 text-gray-900">
                         <div class="flex justify-between">
-                            <h1 class="font-bold text-2xl  text-slate-600">Appointment</h1>
+                            {{-- <h1 class="font-bold text-2xl  text-slate-600">Appointment</h1> --}}
+                            <div>
+                                <a href="{{ route('appointment.create') }}"
+                                    class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                                    type="button">
+                                    <i class="fa-solid fa-plus"></i>  Create Appointment
+                                </a>
+                            </div>
+
+                            <div class="relative">
+                                <form action="{{ route('appointment.index') }}" method="GET">
+
+                                    <input type="search"class="form-control rounded-l-lg " placeholder="Search..."
+                                        name="search" value="{{ isset($search) && !empty($search) ? $search : '' }}"
+                                        type="text" name="search" placeholder="Search..">
+
+                                    <button type="submit"
+                                        class="  border-x-2 border-y-2 p-2 bg-blue-500 text-white  rounded-r-lg ml-[-5px] ">Search
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </button>
+                                </form>
+                            </div>
+                            {{--
+                              <div>
                             <a href="{{ route('appointment.create') }}"
                                 class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                                 type="button">
                                 Create Appointment
                             </a>
+                        </div> --}}
                         </div>
 
                         <table class="w-full text-center">
@@ -43,11 +68,11 @@
                                     <th class="py-2 ">Name</th>
                                     <th class="py-2">Gender</th>
                                     <th class="py-2">Blad-grup</th>
-                                    <th class="py-2">DOB</th>
+                                    {{-- <th class="py-2">DOB</th> --}}
                                     <th class="py-2">Dpartment</th>
                                     <th class="py-2">Doctor</th>
-                                    <th class="py-2">Mobile</th>
-                                    <th class="py-2">Address</th>
+                                    {{-- <th class="py-2">Mobile</th> --}}
+                                    {{-- <th class="py-2">Address</th> --}}
                                     <th class="py-2">Date-Time</th>
                                     <th class="py-2">confirmetion</th>
                                     <th class="py-2">Action</th>
@@ -59,30 +84,51 @@
                                 @forelse ($appointments as $appointment)
                                     <tr>
 
-                                        <td class="py-4"> {{ $appointment->name }} </td>
-                                        <td class="py-3"> {{ $appointment->gender }} </td>
-                                        <td class="py-3"> {{ $appointment->blad_grup }}</td>
-                                        <td class="py-3"> {{ $appointment->bod }} </td>
-                                        <td class="py-3"> {{ @$appointment->department->name }} </td>
-                                        <td class="py-3"> {{ @$appointment->doctor->name }} </td>
-                                        <td class="py-4"> {{ $appointment->mobile }} </td>
-                                        <td class="py-3"> {{ $appointment->address }} </td>
-                                        <td class="py-3"> {{ @$appointment->date_time }} </td>
-                                        <td class="py-3"> {{ @$appointment->is_conform ? ' confirm' : 'Pending' }}
+                                        <td
+                                            class="py-4 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">
+                                            {{ $appointment->name }} </td>
+                                        <td
+                                            class="py-3 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">
+                                            {{ $appointment->gender }} </td>
+                                        <td
+                                            class="py-3 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">
+                                            {{ $appointment->blad_grup }}</td>
+                                        {{-- <td class="py-3"> {{ $appointment->bod }} </td> --}}
+                                        <td
+                                            class="py-3 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">
+                                            {{ @$appointment->department->name }} </td>
+                                        <td
+                                            class="py-3 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">
+                                            {{ @$appointment->doctor->name }} </td>
+                                        {{-- <td class="py-4"> {{ $appointment->mobile }} </td> --}}
+                                        {{-- <td class="py-3"> {{ $appointment->address }} </td> --}}
+                                        <td
+                                            class="py-3 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">
+                                            {{ @$appointment->date_time }} </td>
+                                        <td
+                                            class="py-3 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">
+                                            {{ @$appointment->is_conform ? ' confirm ' : 'Pending' }}
+                                        </td>
+                                        <td>
+                                            <a href="{{ route('appointment.confirm', $appointment->id) }}"
+                                                id="btnSuccess"
+                                                class="bg-lime-500 text-white rounded-lg py-2 px-3  hover:bg-lime-600">
+                                                <i class="fa-solid fa-check"></i> confirm</a>
                                         </td>
                                         <td class="py-3">
                                             {{-- data-modal-toggle="edit-button" --}}
                                             <a href="{{ route('appointment.edit', $appointment->id) }}"
                                                 data-item="{{ $appointment }}" data-modal-toggle="edit-button"
-                                                class="px-4 py-2 edit-button text-white bg-blue-700 rounded-md hover:bg-blue-900">edit</a>
+                                                class="px-5 py-2.5 edit-button text-white bg-blue-700 rounded-md hover:bg-blue-900"><i
+                                                    class="fa-solid fa-pen-to-square"></i>Edit</a>
                                         </td>
                                         <td>
                                             <!-- Modal toggle -->
-                                            <div class="flex justify-center m-3">
+                                            <div class="flex  m-3">
                                                 <button id="deleteButton" data-modal-toggle="deleteModal"
                                                     class="block text-white  bg-red-700 hover:bg-red-900 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                                                     type="button">
-                                                    Delete
+                                                    <i class="fa-solid fa-trash"></i>Delete
                                                 </button>
                                             </div>
                                             <!-- Main modal -->
@@ -121,7 +167,7 @@
                                                                 class="px-4 py-2 w-7/12 text-white bg-red-700 rounded-md hover:bg-red-900"
                                                                 style="width: 67px; height: 36px"
                                                                 action="{{ route('appointment.destroy', $appointment->id) }}"
-                                                                method="get">
+                                                                method="delete">
                                                                 <button type="submit">Delete</button>
                                                                 @csrf
                                                             </form>
@@ -130,14 +176,12 @@
                                                 </div>
                                             </div>
                                         </td>
-                                        <td>
-                                            <a href="{{ route('appointment.confirm', $appointment->id) }}"
-                                                class="bg-lime-500 text-white rounded-lg py-2 px-3 hover:bg-lime-600">confirm</a>
+
+
                     </div>
                 </div>
             </div>
         </div>
-        </td>
         </tr>
     @empty
         <tr>
@@ -155,7 +199,46 @@
         </div>
         </div>
     </x-app-layout>
+    <!-- jquery -->
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <!-- toastr -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
 
+    <!-- core script  -->
+    <script type="text/javascript">
+        // consts
+
+        const btnSuccess = document.getElementById('btnSuccess');
+        // const btnError = document.getElementById('btnError');
+        // const btnWarning = document.getElementById('btnWarning');
+
+        // Event Listeners
+        // btnInfo.addEventListener('click', displayInfoToaster);
+        btnSuccess.addEventListener('click', displaySuccessToaster);
+        // btnError.addEventListener('click', displayErrorToaster);
+        // btnWarning.addEventListener('click', displayWarningToaster);
+
+        // functions
+        // function displayInfoToaster() {
+        //     toastr.options.timeOut = 1500; // 1.5s
+        //     toastr.info('info messages');
+        // }
+
+        function displaySuccessToaster() {
+            toastr.options.timeOut = 1500; // 1.5s
+            toastr.success('Success messages');
+        }
+
+        // function displayErrorToaster() {
+        //     toastr.options.timeOut = 1500; // 1.5s
+        //     toastr.error('errors messages');
+        // }
+
+        // function displayWarningToaster() {
+        //     toastr.options.timeOut = 1500; // 1.5s
+        //     toastr.warning('warning messages');
+        // }
+    </script>
 </body>
 
 </html>

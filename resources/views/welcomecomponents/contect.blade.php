@@ -23,8 +23,8 @@
     </div>
     <div class="flex justify-around my-64 ml-48 mr-64">
 
-        <div class="max-w-sm rounded overflow-hidden shadow-lg  hover:shadow-xl">
-            <img class="w-12 ml-36 " src="image\c1.png" alt="Sunset in the mountains">
+        <div class="max-w-sm rounded overflow-hidden shadow-lg  hover:shadow-xl hover:translate-y-3 hover:bg-slate-100">
+            <img class="w-12 ml-20 " src="image\c1.png" alt="Sunset in the mountains">
             <div class="px-6 py-4">
                 <div class="font-bold text-xl mb-2 text-center">+91 78749 79227</div>
                 <p class="text-gray-700 text-base text-center">
@@ -32,8 +32,8 @@
                 </p>
             </div>
         </div>
-        <div class="max-w-sm rounded overflow-hidden shadow-lg  hover:shadow-xl">
-            <img class="w-12 ml-36 " src="image\c2.png" alt="Sunset in the mountains">
+        <div class="max-w-sm rounded overflow-hidden shadow-lg  hover:shadow-xl hover:translate-y-3 hover:bg-slate-100">
+            <img class="w-12 ml-28 " src="image\c2.png" alt="Sunset in the mountains">
             <div class="px-6 py-4">
                 <div class="font-bold text-xl mb-2 text-center">cityhospital@gmail.com
                 </div>
@@ -42,8 +42,8 @@
                 </p>
             </div>
         </div>
-        <div class="max-w-sm rounded overflow-hidden shadow-lg  hover:shadow-xl">
-            <img class="w-12 ml-36 " src="image\c3.png" alt="Sunset in the mountains">
+        <div class="max-w-sm rounded overflow-hidden shadow-lg  hover:shadow-xl hover:translate-y-3 hover:bg-slate-100">
+            <img class="w-12 ml-16 " src="image\c3.png" alt="Sunset in the mountains">
             <div class="px-6 py-4">
                 <div class="font-bold text-xl mb-2 text-center">00:00 to 23:45
 
@@ -53,7 +53,7 @@
                 </p>
             </div>
         </div>
-        <div class="max-w-sm rounded overflow-hidden shadow-lg hover:shadow-xl">
+        <div class="max-w-sm rounded overflow-hidden shadow-lg hover:shadow-xl  hover:translate-y-3 hover:bg-slate-100">
             <img class="w-12 ml-36 " src="image\c4.jpg" alt="Sunset in the mountains">
             <div class="px-6 py-4">
                 <div class="font-bold text-xl mb-2 text-center">304, Atlanta building, near Sudama chowk, Mota Varachha
@@ -86,7 +86,7 @@
       </div>
    </div> --}}
 
-    <div>
+    <div class="py-5 px-8 ">
         <div class="mt-9">
             <h1 class="text-center text-orange-500 font-bold text-3xl ">About For HMS &&</h1>
             <p class="pl-80 pr-80 mt-10 text-xl">HMS will teach physicians and nurses from around the world the
@@ -101,7 +101,7 @@
         </div>
 
         <div class="ml-[850px] mt-12">
-            <a href="#"
+            <a href="{{route('user.appointment.create')}}"
                 class="btn-outline-primary transition duration-300 ease-in-out focus:outline-none focus:shadow-outline border border-orange-500 hover:bg-orange-500 text-orange-500 hover:text-white font-normal py-2 px-4 rounded-r-lg rounded-l-lg hover:shadow-lg">Book
                 Appointment</a>
         </div>

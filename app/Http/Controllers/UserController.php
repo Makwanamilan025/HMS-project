@@ -14,12 +14,11 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::where('parson','user')->get();
+        $users = User::where('parson','appoiment')->paginate(5);
 
 
         return view('user.index',compact('users'));
     }
-
     /**
      * Show the form for creating a new resource.
      */

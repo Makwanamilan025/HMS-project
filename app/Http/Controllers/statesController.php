@@ -5,7 +5,7 @@ use App\Models\User;
 use App\Models\Appointment;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Appointments;
+
 
 use function Laravel\Prompts\select;
 
@@ -28,7 +28,6 @@ class statesController extends Controller
      */
     public function create()
     {
-        $user = user::all();
 
     }
 
@@ -70,5 +69,11 @@ class statesController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+    public function dcount(){
+
+       
+
+      return view('dashboard', compact('appointments'));
     }
 }

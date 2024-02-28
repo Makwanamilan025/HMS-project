@@ -13,6 +13,7 @@
 
 <body>
     <x-app-layout>
+        
         <x-slot name="header">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 {{ __('Dashboard') }}
@@ -28,7 +29,7 @@
             <div class="max-w-[1250px]  mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white  shadow-sm sm:rounded-lg">
                     <div class="p-6 text-gray-900">
-                        <h1 class="font-bold text-2xl  text-slate-600">User</h1>
+                        <h1 class="font-bold text-2xl  text-slate-600">Users</h1>
                         <table class="w-full text-center">
                             <thead>
                                 <tr class="border-b border-b-sky-400 text-slate-700 text-1xl">
@@ -46,12 +47,11 @@
                                 @endforelse
                             </tbody>
                         </table>
+                        <div>{{ $users->links() }}</div>
                     </div>
                 </div>
             </div>
         </div>
-
-
 
     </x-app-layout>
 

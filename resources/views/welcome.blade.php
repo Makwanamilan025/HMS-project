@@ -6,26 +6,60 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hospitel</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 </head>
 <style>
     html {
         scroll-behavior: smooth;
     }
+    * {
+  cursor: none;
+}
+
+.your-cursor {
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  transform: translateX(-50%) translateY(-50%);
+  border-radius: 50%;
+  user-select: none;
+  pointer-events: none;
+}
+.your-cursor {
+  background-color: gold;
+  z-index: 5;
+}
+.your-cursor:nth-child(2) {
+  background-color: gold;
+  z-index: 10;
+  width: 20px;
+  height: 20px;
+}
+.your-cursor:nth-child(3) {
+  background-color: gold;
+  z-index: 7;
+  width: 6px;
+  height: 6px;
+}
 </style>
 
 
 <body class="antialiased">
-    {{-- <div class="w-8">
-        <img src="https://infyhms-staging.sgp1.cdn.digitaloceanspaces.com/1084/InfyHMS-80.png" alt="">
-    </div> --}}
+
     @include('layouts.header')
 
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <div class='your-cursor'></div>
+    <div class='your-cursor'></div>
+    <div class='your-cursor'></div>
     <section id="home">
         <div>
             <img src="https://infyhms-staging.sgp1.cdn.digitaloceanspaces.com/903/Home-HMS.png" alt="herosection"
                 class="w-[35%] h-1/4 ml-[1100px] mt-28">
         </div>
         <div>
+            <div class='console-container'><span id='text'></span><div class='console-underscore' id='console'>&#95;</div></div>
             <h1 class="text-5xl font-bold mt-[-300px] ml-80 text-orange-500">Make Health<br>Care Better Together</h1>
             <h1 class=" ml-80 mt-9">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia,<br> laborum ea? In
                 nisi, itaque quae voluptatum assumenda repellendus<br> aspernatur error mollitia, quod eveniet totam
@@ -33,12 +67,13 @@
                 ipsa molestias saepe fuga.</h1>
         </div>
         <div>
-            <a href="#appointment"> <button
-                    class="btn-primary transition duration-300 ease-in-out focus:outline-none focus:shadow-outline bg-orange-500 text-white px-4 py-2 mx-0 outline-none focus:shadow-outline hover:bg-orange-600  font-normal mt-12 ml-96 rounded-l-lg hover:shadow-lg">Appoinment</button></a>
+            <a href="{{ route('user.appointment.create') }}"> <button
+                    class="btn-primary transition duration-300 ease-in-out focus:outline-none focus:shadow-outline bg-orange-500 text-white px-4 py-2 mx-0 outline-none focus:shadow-outline hover:bg-orange-600  font-normal mt-12 ml-96 rounded-l-lg hover:shadow-lg">
+                    Appoinment </button> </a>
 
-            <button
-                class="btn-outline-primary transition duration-300 ease-in-out focus:outline-none focus:shadow-outline border border-orange-500 hover:bg-orange-600 text-black hover:text-white font-normal py-2 px-4 rounded-r-lg hover:shadow-lg">Show
-                Blog</button>
+            <a href="{{ route('states') }}">
+                <button
+                    class="btn-outline-primary transition duration-300 ease-in-out focus:outline-none focus:shadow-outline border border-orange-500 hover:bg-orange-600 text-black hover:text-white font-normal py-2 px-4 rounded-r-lg hover:shadow-lg">status</button></a>
         </div>
     </section>
     {{-- teem section --}}
@@ -49,7 +84,7 @@
                     <h2 class="text-3xl font-bold tracking-tight text-orange-500 sm:text-4xl">Meet our Doctor</h2>
                     <p class="mt-6 text-lg leading-8 text-gray-600">A medical team, also known as a clinical care team,
                         is a group of health professionals that work together to better serve their patients. A medical
-                        team .</p>
+                        team. </p>
                 </div>
                 <ul role="list" class="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2">
                     <li>
@@ -129,7 +164,7 @@
     </div>
     <div class="flex justify-around mt-24 gap-[-8] m-40">
         <div
-            class="max-w-sm rounded overflow-hidden shadow-lg hover:bg-orange-500 hover:text-white border-x-2 border-y-2 duration-500">
+            class="max-w-sm rounded overflow-hidden shadow-lg hover:bg-orange-500 hover:text-white border-x-2 border-y-2 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">
             <img class="w-28 rounded-lg ml-36"
                 src="https://infyhms-staging.sgp1.cdn.digitaloceanspaces.com/214/cardiology.png"
                 alt="Sunset in the mountains">
@@ -142,7 +177,7 @@
             </div>
         </div>
         <div
-            class="max-w-sm rounded overflow-hidden shadow-lg  hover:bg-orange-500 hover:text-white border-x-2 border-y-2 duration-500 ">
+            class="max-w-sm rounded overflow-hidden shadow-lg  hover:bg-orange-500 hover:text-white border-x-2 border-y-2 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300 ">
             <img class="w-28 rounded-lg ml-36"
                 src="https://infyhms-staging.sgp1.cdn.digitaloceanspaces.com/215/orthopedics.png"
                 alt="Sunset in the mountains">
@@ -154,7 +189,7 @@
             </div>
         </div>
         <div
-            class="max-w-sm rounded overflow-hidden shadow-lg  hover:bg-orange-500 hover:text-white border-x-2 border-y-2 duration-500 ">
+            class="max-w-sm rounded overflow-hidden shadow-lg  hover:bg-orange-500 hover:text-white border-x-2 border-y-2 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300 ">
             <img class="w-28 rounded-lg ml-36"
                 src="https://infyhms-staging.sgp1.cdn.digitaloceanspaces.com/216/pulmonology.png"
                 alt="Sunset in the mountains">
@@ -167,7 +202,7 @@
             </div>
         </div>
         <div
-            class="max-w-sm rounded overflow-hidden shadow-lg  hover:bg-orange-500 hover:text-white border-x-2 border-y-2 duration-500 ">
+            class="max-w-sm rounded overflow-hidden shadow-lg  hover:bg-orange-500 hover:text-white border-x-2 border-y-2 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300 ">
             <img class="w-28 rounded-lg ml-36"
                 src="https://infyhms-staging.sgp1.cdn.digitaloceanspaces.com/217/dental-care.png"
                 alt="Sunset in the mountains">
@@ -181,7 +216,7 @@
     </div>
     <div class="flex justify-around gap-[-8] m-40 "style=" margin-top:-139px">
         <div
-            class="max-w-sm rounded overflow-hidden shadow-lg hover:bg-orange-500 hover:text-white border-x-2 border-y-2 duration-500">
+            class="max-w-sm rounded overflow-hidden shadow-lg hover:bg-orange-500 hover:text-white border-x-2 border-y-2 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">
             <img class="w-28 rounded-lg ml-36"
                 src="https://infyhms-staging.sgp1.cdn.digitaloceanspaces.com/224/1111.jpeg"
                 alt="Sunset in the mountains">
@@ -194,7 +229,7 @@
             </div>
         </div>
         <div
-            class="max-w-sm rounded overflow-hidden shadow-lg  hover:bg-orange-500 hover:text-white border-x-2 border-y-2 duration-500 ">
+            class="max-w-sm rounded overflow-hidden shadow-lg  hover:bg-orange-500 hover:text-white border-x-2 border-y-2 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">
             <img class="w-28 rounded-lg ml-36"
                 src="https://infyhms-staging.sgp1.cdn.digitaloceanspaces.com/221/neurology.png"
                 alt="Sunset in the mountains">
@@ -207,7 +242,7 @@
             </div>
         </div>
         <div
-            class="max-w-sm rounded overflow-hidden shadow-lg  hover:bg-orange-500 hover:text-white border-x-2 border-y-2 duration-500 ">
+            class="max-w-sm rounded overflow-hidden shadow-lg  hover:bg-orange-500 hover:text-white border-x-2 border-y-2 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300 ">
             <img class="w-28 rounded-lg ml-36"
                 src="https://infyhms-staging.sgp1.cdn.digitaloceanspaces.com/220/ophthalmology.png"
                 alt="Sunset in the mountains">
@@ -220,7 +255,7 @@
             </div>
         </div>
         <div
-            class="max-w-sm rounded overflow-hidden shadow-lg  hover:bg-orange-500 hover:text-white border-x-2 border-y-2 duration-500  ">
+            class="max-w-sm rounded overflow-hidden shadow-lg  hover:bg-orange-500 hover:text-white border-x-2 border-y-2 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300  ">
             <img class="w-28 rounded-lg ml-36"
                 src="https://infyhms-staging.sgp1.cdn.digitaloceanspaces.com/219/ambulance.png"
                 alt="Sunset in the mountains">
@@ -240,7 +275,7 @@
             <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-5">Hospitel Manegmeint system
             </p>
         </div>
-        <div id="default-carousel" class="relative w-4/5 ml-56 " data-carousel="slide" >
+        <div id="default-carousel" class="relative w-4/5 ml-56 " data-carousel="slide">
             <!-- Carousel wrapper -->
             <div class="relative h-56 overflow-hidden rounded-lg md:h-96 bg-slate-500">
                 <!-- Item 1 -->
@@ -326,7 +361,7 @@
                             eget aliquet quis. Suspendisse eget egestas a elementum pulvinar et feugiat blandit at. In
                             mi viverra elit nunc.</p>
                     </div>
-                    <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+                    {{-- <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
                         <dl
                             class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
                             <div class="relative pl-16">
@@ -392,68 +427,78 @@
                                     eget.</dd>
                             </div>
                         </dl>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
-        <div class="flex justify-around my-24">
-            <div class="mt-48">
-                <h2 class="text-6xl text-orange-500 font-bold ">Contact</h2>
+        <div class="flex justify-center gap-[10rem]">
+            <div class="">
+                {{-- <h2 class="text-6xl text-orange-500 font-bold ">Contact</h2> --}}
+                <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-3">
+
+                    <div
+                        class="max-w-sm rounded overflow-hidden shadow-lg  hover:shadow-xl transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">
+                        <img class="w-12 ml-36 " src="image\c1.png" alt="Sunset in the mountains">
+                        <div class="px-6 py-4">
+                            <div class="font-bold text-xl mb-2 text-center">+91 78749 79227</div>
+                            <p class="text-gray-700 text-base text-center">
+                                Call Today
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="max-w-sm rounded overflow-hidden shadow-lg  hover:shadow-xl transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">
+                        <img class="w-12 ml-36 " src="image\c2.png" alt="Sunset in the mountains">
+                        <div class="px-6 py-4">
+                            <div class="font-bold text-xl mb-2 text-center">cityhospital@gmail.com
+                            </div>
+                            <p class="text-gray-700 text-base text-center">
+                                Contact Hospital
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="max-w-sm rounded overflow-hidden shadow-lg  hover:shadow-xl transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">
+                        <img class="w-12 ml-36 " src="image\c3.png" alt="Sunset in the mountains">
+                        <div class="px-6 py-4">
+                            <div class="font-bold text-xl mb-2 text-center">00:00 to 23:45
+
+                            </div>
+                            <p class="text-gray-700 text-base text-center">
+                                Open Hours
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="max-w-sm rounded overflow-hidden shadow-lg hover:shadow-xl transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">
+                        <img class="w-12 ml-36 " src="image\c4.jpg" alt="Sunset in the mountains">
+                        <div class="px-6 py-4">
+                            <div class="font-bold text-xl mb-2 text-center">304,Aembeveli utaran
+                                surat
+                            </div>
+                            <p class="text-gray-700 text-base text-center">
+                                Our Location
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
-            <img src="https://hms-staging.infyom.com/web_front/images/page-banner/Contact.png" alt="" class="w-[35%]">
+            <div>
+                <img src="https://hms-staging.infyom.com/web_front/images/page-banner/Contact.png" alt=""
+                    class="">
+            </div>
         </div>
-        <div class="flex justify-around my-64 ml-48 mr-64">
 
-            <div class="max-w-sm rounded overflow-hidden shadow-lg  hover:shadow-xl">
-                <img class="w-12 ml-36 " src="image\c1.png" alt="Sunset in the mountains">
-                <div class="px-6 py-4">
-                    <div class="font-bold text-xl mb-2 text-center">+91 78749 79227</div>
-                    <p class="text-gray-700 text-base text-center">
-                        Call Today
-                    </p>
-                </div>
-            </div>
-            <div class="max-w-sm rounded overflow-hidden shadow-lg  hover:shadow-xl">
-                <img class="w-12 ml-36 " src="image\c2.png" alt="Sunset in the mountains">
-                <div class="px-6 py-4">
-                    <div class="font-bold text-xl mb-2 text-center">cityhospital@gmail.com
-                    </div>
-                    <p class="text-gray-700 text-base text-center">
-                        Contact Hospital
-                    </p>
-                </div>
-            </div>
-            <div class="max-w-sm rounded overflow-hidden shadow-lg  hover:shadow-xl">
-                <img class="w-12 ml-36 " src="image\c3.png" alt="Sunset in the mountains">
-                <div class="px-6 py-4">
-                    <div class="font-bold text-xl mb-2 text-center">00:00 to 23:45
 
-                    </div>
-                    <p class="text-gray-700 text-base text-center">
-                        Open Hours
-                    </p>
-                </div>
-            </div>
-            <div class="max-w-sm rounded overflow-hidden shadow-lg hover:shadow-xl">
-                <img class="w-12 ml-36 " src="image\c4.jpg" alt="Sunset in the mountains">
-                <div class="px-6 py-4">
-                    <div class="font-bold text-xl mb-2 text-center">304, Atlanta building, near Sudama chowk, Mota Varachha
-                    </div>
-                    <p class="text-gray-700 text-base text-center">
-                        Our Location
-                    </p>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="flex justify-around my-24">
+        {{-- <div class="flex justify-around my-24">
             <div class="mt-48">
                 <h2 class="text-6xl text-orange-500 font-bold ">About Us</h2>
             </div>
             <img src="https://infyhms-staging.sgp1.cdn.digitaloceanspaces.com/1009/About-HMS.png" alt=""
                 class="w-[35%]">
-        </div>
+        </div> --}}
         {{-- <div>
           <div>
                <div class="bg-green-200 p-9 w-80 h-48 ml-72 mt-32 rounded-2xl ">
@@ -474,19 +519,62 @@
                     principles of blood management, as well as how to manage their own blood conservation programs. The
                     hospital was chosen based on the reputation its bloodless program has established in the medical
                     community and because of its nationally recognized results. We are a group of creative nerds making
-                    awesome stuff for Web and Mobile. We just love to contribute to open source technologies. We always try
+                    awesome stuff for Web and Mobile. We just love to contribute to open source technologies. We always
+                    try
                     to build something which helps developers to save their time. so they can spend a bit more time with
                     their friends And family. ^&&&
 
                 </p>
             </div>
 
-            <div class="ml-[850px] mb-10">
-                <a href="#"
-                    class="btn-outline-primary transition duration-300 ease-in-out focus:outline-none focus:shadow-outline border border-orange-500 hover:bg-orange-500 text-orange-500 hover:text-white font-normal py-2 px-4 rounded-r-lg rounded-l-lg hover:shadow-lg">Book
+            <div class="ml-[850px] mb-10 mt-12">
+                <a href="{{ route('user.appointment.create') }}"
+                    class="border-2 border-solid border-orange-600 rounded py-2 px-12 text-xl text-orange-600 hover:bg-orange-600 hover:text-white mt-4 transition-color duration-300">Book
                     Appointment</a>
             </div>
         </div>
+
+        {{-- <div class="feature-1 py-6 md:py-12">
+            <div class="container px-4 mx-auto">
+              <div class="flex -mx-4">
+                <div class="px-4 text-center md:w-10/12 xl:w-8/12 mx-auto">
+                  <h1 class="mb-4 text-4xl font-medium">FWR Blocks features</h1>
+                  <p class="mb-4 text-xl">The main aim of creating FWR blocks is to help designers, developers and agencies create websites and web apps quickly and easily. Each and every block uses minimal custom styling and is based on the utility first Tailwind framework.</p>
+                  <button class="border-2 border-solid border-indigo-600 rounded py-2 px-12 text-xl text-indigo-600 hover:bg-indigo-600 hover:text-white mt-4 transition-color duration-300">Learn More</button>
+                </div>
+              </div>
+
+              <div class="md:flex md:-mx-4 mt-12 md:pt-4">
+                <div class="px-4 md:w-1/3 mt-6 md:mt-0">
+                  <div class="feature-box text-center p-4 md:p-6 max-w-sm mx-auto border-2 border-solid border-gray-300 rounded md:h-full">
+                    <div class="text-xl p-4 w-16 h-16 mx-auto">
+                      <i class="fas fa-bolt text-indigo-600"></i>
+                    </div>
+                    <h5 class="text-xl font-medium mb-4">Fresh Design</h5>
+                    <p class="text-gray-600 mb-3">FWR blocks bring in an air of fresh design with their creative layouts and blocks, which are easily customizable.</p>
+                  </div>
+                </div>
+                <div class="px-4 md:w-1/3 mt-6 md:mt-0">
+                  <div class="feature-box text-center p-4 md:p-6 max-w-sm mx-auto border-2 border-solid border-gray-300 rounded md:h-full">
+                    <div class="text-xl p-4 w-16 h-16 mx-auto">
+                      <i class="fas fa-code text-indigo-600"></i>
+                    </div>
+                    <h5 class="text-xl font-medium mb-4">Clean Code</h5>
+                    <p class="text-gray-600 mb-3">FWR blocks are the cleanest pieces of HTML blocks, which are built with utmost care to quality and usability.</p>
+                  </div>
+                </div>
+                <div class="px-4 md:w-1/3 mt-6 md:mt-0">
+                  <div class="feature-box text-center p-4 md:p-6 max-w-sm mx-auto border-2 border-solid border-gray-300 rounded md:h-full">
+                    <div class="text-xl p-4 w-16 h-16 mx-auto">
+                      <i class="fas fa-wrench text-indigo-600"></i>
+                    </div>
+                    <h5 class="text-xl font-medium mb-4">Perfect Tool</h5>
+                    <p class="text-gray-600 mb-3">FWR blocks is a perfect tool for designers, developers and agencies looking to create stunning websites in no time.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> --}}
 
         {{-- -------------------------------------------------------------------blog---------------------------------------------- --}}
 
@@ -509,5 +597,34 @@
 
 
 </body>
-
+<script>
+    $(document).mousemove(function(e) {
+  $(".your-cursor")
+    .eq(0)
+    .css({
+      left: e.pageX,
+      top: e.pageY
+    });
+  setTimeout(function() {
+    $(".your-cursor")
+      .eq(1)
+      .css({
+        left: e.pageX,
+        top: e.pageY
+      });
+  }, 400);
+  setTimeout(function() {
+    $(".your-cursor")
+      .eq(2)
+      .css({
+        left: e.pageX,
+        top: e.pageY
+      });
+  }, 200);
+});
+$(document).on("mousemove", function(e) {
+  mouseX = e.pageX;
+  mouseY = e.pageY;
+});
+</script>
 </html>

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Doctor;
 use App\Http\Requests\DoctorRequest;
 use App\Models\Department;
@@ -39,7 +40,6 @@ class DoctorController extends Controller
 
         $input = $request->all();
 
-
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $fileName = time() . '.' . $image->getClientOriginalExtension();
@@ -75,7 +75,7 @@ class DoctorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+
         $doctor = doctor::find($id);
 
         $input = $request->all();
@@ -99,6 +99,7 @@ class DoctorController extends Controller
      */
     public function destroy($id)
     {
+    
         Doctor::findOrFail($id)->delete();
         return redirect()->route('doctor.index');
     }

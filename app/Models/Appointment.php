@@ -25,8 +25,8 @@ class Appointment extends Model
     ];
 
     protected $castes = [
-        'is_conform' => 'boolean',
 
+        'is_conform' => 'boolean',
     ];
 
 

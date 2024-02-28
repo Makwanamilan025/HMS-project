@@ -52,7 +52,7 @@ class appointmentsController extends Controller
 
         ]);
 
-        return redirect()->route('user.appointment.create');
+        return redirect()->route('states');
     }
 
     /**

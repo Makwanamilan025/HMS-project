@@ -27,9 +27,9 @@
             <h1> Improve Your Health<h1>
         </div>
     </div>
-    <div  class="flex justify-around mt-24 gap-[-8] m-40">
+    <div class="flex justify-around mt-24 gap-[-8] m-40">
         <div
-            class="max-w-sm rounded overflow-hidden shadow-lg hover:bg-orange-500 hover:text-white border-x-2 border-y-2 duration-500">
+            class="max-w-sm rounded overflow-hidden shadow-lg hover:bg-orange-500 hover:text-white border-x-2 border-y-2  transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">
             <img class="w-28 rounded-lg ml-36"
                 src="https://infyhms-staging.sgp1.cdn.digitaloceanspaces.com/214/cardiology.png"
                 alt="Sunset in the mountains">
@@ -42,7 +42,7 @@
             </div>
         </div>
         <div
-            class="max-w-sm rounded overflow-hidden shadow-lg  hover:bg-orange-500 hover:text-white border-x-2 border-y-2 duration-500 ">
+            class="max-w-sm rounded overflow-hidden shadow-lg  hover:bg-orange-500 hover:text-white border-x-2 border-y-2 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300 ">
             <img class="w-28 rounded-lg ml-36"
                 src="https://infyhms-staging.sgp1.cdn.digitaloceanspaces.com/215/orthopedics.png"
                 alt="Sunset in the mountains">
@@ -54,7 +54,7 @@
             </div>
         </div>
         <div
-            class="max-w-sm rounded overflow-hidden shadow-lg  hover:bg-orange-500 hover:text-white border-x-2 border-y-2 duration-500 ">
+            class="max-w-sm rounded overflow-hidden shadow-lg  hover:bg-orange-500 hover:text-white border-x-2 border-y-2 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">
             <img class="w-28 rounded-lg ml-36"
                 src="https://infyhms-staging.sgp1.cdn.digitaloceanspaces.com/216/pulmonology.png"
                 alt="Sunset in the mountains">
@@ -67,7 +67,7 @@
             </div>
         </div>
         <div
-            class="max-w-sm rounded overflow-hidden shadow-lg  hover:bg-orange-500 hover:text-white border-x-2 border-y-2 duration-500 ">
+            class="max-w-sm rounded overflow-hidden shadow-lg  hover:bg-orange-500 hover:text-white border-x-2 border-y-2 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300 ">
             <img class="w-28 rounded-lg ml-36"
                 src="https://infyhms-staging.sgp1.cdn.digitaloceanspaces.com/217/dental-care.png"
                 alt="Sunset in the mountains">
@@ -81,7 +81,7 @@
     </div>
     <div class="flex justify-around gap-[-8] m-40 "style=" margin-top:-139px">
         <div
-            class="max-w-sm rounded overflow-hidden shadow-lg hover:bg-orange-500 hover:text-white border-x-2 border-y-2 duration-500">
+            class="max-w-sm rounded overflow-hidden shadow-lg hover:bg-orange-500 hover:text-white border-x-2 border-y-2 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">
             <img class="w-28 rounded-lg ml-36"
                 src="https://infyhms-staging.sgp1.cdn.digitaloceanspaces.com/224/1111.jpeg"
                 alt="Sunset in the mountains">
@@ -94,7 +94,7 @@
             </div>
         </div>
         <div
-            class="max-w-sm rounded overflow-hidden shadow-lg  hover:bg-orange-500 hover:text-white border-x-2 border-y-2 duration-500 ">
+            class="max-w-sm rounded overflow-hidden shadow-lg  hover:bg-orange-500 hover:text-white border-x-2 border-y-2 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">
             <img class="w-28 rounded-lg ml-36"
                 src="https://infyhms-staging.sgp1.cdn.digitaloceanspaces.com/221/neurology.png"
                 alt="Sunset in the mountains">
@@ -106,7 +106,7 @@
             </div>
         </div>
         <div
-            class="max-w-sm rounded overflow-hidden shadow-lg  hover:bg-orange-500 hover:text-white border-x-2 border-y-2 duration-500 ">
+            class="max-w-sm rounded overflow-hidden shadow-lg  hover:bg-orange-500 hover:text-white border-x-2 border-y-2 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">
             <img class="w-28 rounded-lg ml-36"
                 src="https://infyhms-staging.sgp1.cdn.digitaloceanspaces.com/220/ophthalmology.png"
                 alt="Sunset in the mountains">
@@ -119,7 +119,7 @@
             </div>
         </div>
         <div
-            class="max-w-sm rounded overflow-hidden shadow-lg  hover:bg-orange-500 hover:text-white border-x-2 border-y-2 duration-500  ">
+            class="max-w-sm rounded overflow-hidden shadow-lg  hover:bg-orange-500 hover:text-white border-x-2 border-y-2 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300 ">
             <img class="w-28 rounded-lg ml-36"
                 src="https://infyhms-staging.sgp1.cdn.digitaloceanspaces.com/219/ambulance.png"
                 alt="Sunset in the mountains">

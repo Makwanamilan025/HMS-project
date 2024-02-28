@@ -31,7 +31,7 @@
                             <a href="{{ route('department.create') }}"
                                 class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                                 type="button">
-                                Create Department
+                                <i class="fa-solid fa-plus"></i>  Create Department
                             </a>
                         </div>
                         <table class="w-full text-center">
@@ -51,14 +51,14 @@
                                         <td class="py-2">
                                             {{-- data-modal-toggle="edit-button" --}}
                                             <a href="{{ route('department.edit', $department->id) }}"data-modal-toggle="edit-button"
-                                                class="px-4 py-2 edit-button text-white bg-blue-700 rounded-md hover:bg-blue-900">edit</a>
+                                                class="px-4 py-2 edit-button text-white bg-blue-700 rounded-md hover:bg-blue-900"><i class="fa-solid fa-pen-to-square"></i> Edit</a>
                                         </td>
                                         <td class="py-2 ml-6">
                                             <form
-                                                class="px-4 py-2 w-20 text-white ml-6 bg-red-700 rounded-md hover:bg-red-900"
+                                                class="px-4 py-1.5 w-28 text-white ml-6 bg-red-700 rounded-md hover:bg-red-900"
                                                 action="{{ route('department.destroy', $department->id) }}"
                                                 method="DELETE">
-                                                <button type="submit">Delet</button>
+                                                <button type="submit"><i class="fa-solid fa-trash"></i>Delete</button>
                                                 @csrf
                                             </form>
                                         </td>

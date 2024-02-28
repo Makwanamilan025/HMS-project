@@ -61,7 +61,7 @@
                                             {{-- data-modal-toggle="edit-button" --}}
                                             <a href="{{ route('doctor.edit', $doctor->id) }}"
                                                 data-item="{{ $doctor }}" data-modal-toggle="edit-button"
-                                                class="px-4 py-2 edit-button text-white bg-blue-700 rounded-md hover:bg-blue-900">edit</a>
+                                                class="px-4 py-2 edit-button text-white bg-blue-700 rounded-md hover:bg-blue-900"><i class="fa-solid fa-pen-to-square"></i></a>
                                         </td>
                                         <td>
                                             <!-- Modal toggle -->
@@ -69,7 +69,7 @@
                                                 <button id="deleteButton" data-modal-toggle="deleteModal"
                                                     class="block text-white  bg-red-700 hover:bg-red-900 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 "
                                                     type="button">
-                                                    Delete
+                                                    <i class="fa-solid fa-trash"></i>
                                                 </button>
                                             </div>
 

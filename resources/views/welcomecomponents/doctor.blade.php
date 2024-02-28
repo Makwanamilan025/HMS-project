@@ -509,80 +509,7 @@ body {
         <img src="https://hms-staging.infyom.com/web_front/images/page-banner/Doctors.png" alt="" class="w-[35%]">
     </div>
 
-    {{-- teem section --}}
-    <div id="Meet our Doctor" class="mt-48">
-        <div class="bg-white py-24 sm:py-32">
-            <div class="mx-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
-                <div class="max-w-2xl">
-                    <h2 class="text-3xl font-bold tracking-tight text-orange-500 sm:text-4xl">Meet our Doctor</h2>
-                    <p class="mt-6 text-lg leading-8 text-gray-600">A medical team, also known as a clinical care team,
-                        is a group of health professionals that work together to better serve their patients. A medical
-                        team .</p>
-                </div>
-                <ul role="list" class="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2">
-                    <li>
-                        <div class="flex items-center gap-x-6">
-                            <img class="h-16 w-16 rounded-full" src="/Doctor_img/d1.jpeg" alt="">
-                            <div>
-                                <h3 class="text-base font-semibold leading-7 tracking-tight text-gray-900">Dr kanani
-                                </h3>
-                                <p class="text-sm font-semibold leading-6 text-orange-500">Opretion & emergensi</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="flex items-center gap-x-6">
-                            <img class="h-16 w-16 rounded-full" src="/Doctor_img/d2.jpeg" alt="">
-                            <div>
-                                <h3 class="text-base font-semibold leading-7 tracking-tight text-gray-900">kanika
-                                    mishara</h3>
-                                <p class="text-sm font-semibold leading-6 text-orange-500">Obstetrics and gynaecology
-                                </p>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="flex items-center gap-x-6">
-                            <img class="h-16 w-16 rounded-full" src="/Doctor_img/d3.jpeg" alt="">
-                            <div>
-                                <h3 class="text-base font-semibold leading-7 tracking-tight text-gray-900">Dr joi</h3>
-                                <p class="text-sm font-semibold leading-6 text-orange-500">Radiology</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="flex items-center gap-x-6">
-                            <img class="h-16 w-16 rounded-full" src="/Doctor_img/d4.jpeg" alt="">
-                            <div>
-                                <h3 class="text-base font-semibold leading-7 tracking-tight text-gray-900">Dr k.v sharma
-                                </h3>
-                                <p class="text-sm font-semibold leading-6 text-orange-500">Urology</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="flex items-center gap-x-6">
-                            <img class="h-16 w-16 rounded-full" src="/Doctor_img/d5.jpeg" alt="">
-                            <div>
-                                <h3 class="text-base font-semibold leading-7 tracking-tight text-gray-900">Dr krupa</h3>
-                                <p class="text-sm font-semibold leading-6 text-orange-500">Pediatrics</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="flex items-center gap-x-6">
-                            <img class="h-16 w-16 rounded-full" src="/Doctor_img/d6.jpeg" alt="">
-                            <div>
-                                <h3 class="text-base font-semibold leading-7 tracking-tight text-gray-900">Dr kunal</h3>
-                                <p class="text-sm font-semibold leading-6 text-orange-500">phisayotherpi</p>
-                            </div>
-                        </div>
-                    </li>
-                    <!-- More people... -->
-                </ul>
-            </div>
-        </div>
-    </div>
+
     <!-- about -->
     <div>
         <div>
@@ -680,6 +607,83 @@ body {
      </div>
    </div>
  </div>
+ {{-- teem section --}}
+
+ <div id="Meet our Doctor" class="mt-48">
+    <div class="bg-white py-24 sm:py-32">
+        <div class="mx-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
+            <div class="max-w-2xl">
+                <h2 class="text-3xl font-bold tracking-tight text-orange-500 sm:text-4xl">Meet our Doctor</h2>
+                <p class="mt-6 text-lg leading-8 text-gray-600">A medical team, also known as a clinical care team,
+                    is a group of health professionals that work together to better serve their patients. A medical
+                    team .</p>
+            </div>
+
+            <ul role="list" class="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2">
+                <li>
+                    <div class="flex items-center gap-x-6">
+                        <img class="h-16 w-16 rounded-full" src="/Doctor_img/d1.jpeg" alt="">
+                        <div>
+                            <h3 class="text-base font-semibold leading-7 tracking-tight text-gray-900">yadav
+                            </h3>
+                            <p class="text-sm font-semibold leading-6 text-orange-500">mbbs</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="flex items-center gap-x-6">
+                        <img class="h-16 w-16 rounded-full" src="/Doctor_img/d2.jpeg" alt="">
+                        <div>
+                            <h3 class="text-base font-semibold leading-7 tracking-tight text-gray-900">
+                                mishara</h3>
+                            <p class="text-sm font-semibold leading-6 text-orange-500">
+                           Orthopedik </p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="flex items-center gap-x-6">
+                        <img class="h-16 w-16 rounded-full" src="/Doctor_img/d3.jpeg" alt="">
+                        <div>
+                            <h3 class="text-base font-semibold leading-7 tracking-tight text-gray-900">Dr joi</h3>
+                            <p class="text-sm font-semibold leading-6 text-orange-500">Radiology</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="flex items-center gap-x-6">
+                        <img class="h-16 w-16 rounded-full" src="/Doctor_img/d4.jpeg" alt="">
+                        <div>
+                            <h3 class="text-base font-semibold leading-7 tracking-tight text-gray-900">Dr k.v sharma
+                            </h3>
+                            <p class="text-sm font-semibold leading-6 text-orange-500">Urology</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="flex items-center gap-x-6">
+                        <img class="h-16 w-16 rounded-full" src="/Doctor_img/d5.jpeg" alt="">
+                        <div>
+                            <h3 class="text-base font-semibold leading-7 tracking-tight text-gray-900">Dr krupa</h3>
+                            <p class="text-sm font-semibold leading-6 text-orange-500">Pediatrics</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="flex items-center gap-x-6">
+                        <img class="h-16 w-16 rounded-full" src="/Doctor_img/d6.jpeg" alt="">
+                        <div>
+                            <h3 class="text-base font-semibold leading-7 tracking-tight text-gray-900">Dr kunal</h3>
+                            <p class="text-sm font-semibold leading-6 text-orange-500">phisayotherpi</p>
+                        </div>
+                    </div>
+                </li>
+                <!-- More people... -->
+            </ul>
+        </div>
+    </div>
+</div>
+
 
  <script>
     var closeBtn = document.querySelectorAll(".close"),

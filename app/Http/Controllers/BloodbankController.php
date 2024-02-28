@@ -14,8 +14,9 @@ class BloodbankController extends Controller
     public function index()
     {
 
-        $bloodbanks = bloodbank::latest()->paginate(8);
+        // $bloodbanks = bloodbank::latest()->paginate(8);
 
+        $bloodbanks = bloodbank::latest()->paginate(7);
         // $bloodbanks = bloodbank::all();
 
       return view('bloodbank.inde',compact('bloodbanks'));

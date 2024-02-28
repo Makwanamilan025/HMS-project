@@ -18,13 +18,26 @@ class AppointmentController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        // $appointments = Appointment::all();
+        $query = Appointment::query();
 
-        $appointments = Appointment::paginate(8);
+        $search = $request->search;
+        $query->when(isset($search) && !empty($search), function ($query) use ($search) {
 
-        return view('Appointment.index',['appointments' => $appointments]);
+            return $query->where('name', 'like', "%$search%")
+                ->orwhere('gender', 'like', "%$search%")
+                ->orWhereHas('doctor', function ($qr) use ($search) {
+                    $qr->where('name', 'like', "%$search%");
+                })
+                ->orWhereHas('department', function ($query) use ($search) {
+                    $query->where('name', 'like', "%$search%");
+                });
+        });
+
+        $appointments = $query->paginate(8);
+
+        return view('Appointment.index', compact('appointments', 'search'));
     }
 
     /**
@@ -34,21 +47,18 @@ class AppointmentController extends Controller
     {
 
         $department = Department::all();
-
         $doctor = Doctor::all();
-
-        return view('Appointment.creat',compact('department','doctor'));
+        return view('Appointment.creat', compact('department', 'doctor'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request )
+    public function store(Request $request)
     {
         $input = $request->all();
         $input['is_conform'] = false;
-
-       $appointment = Appointment::create($input);
+        $appointment = Appointment::create($input);
 
         return redirect()->route('appointment.index');
     }
@@ -67,12 +77,10 @@ class AppointmentController extends Controller
     public function edit(string $id)
     {
         $departments = Department::all();
-
         $doctors = Doctor::all();
 
         $appointments = appointment::find($id);
-
-        return view('Appointment.edit',compact('appointments','departments','doctors'));
+        return view('Appointment.edit', compact('appointments', 'departments', 'doctors'));
     }
 
     /**
@@ -82,16 +90,13 @@ class AppointmentController extends Controller
     {
 
         $doctor = doctor::find($id);
-
         $departments = Department::find($id);
-
-      $appointment = Appointment::find($id);
+        $appointment = Appointment::find($id);
 
         $input = $request->all();
+        $appointment->update($input);
 
-          $appointment->update($input);
-
-        return redirect()->route('appointment.index')->with('appointment','appointment Updated Successfully');
+        return redirect()->route('appointment.index')->with('appointment', 'appointment Updated Successfully');
     }
 
     /**
@@ -120,5 +125,4 @@ class AppointmentController extends Controller
 
         return redirect()->back();
     }
-
-}
+};

@@ -17,7 +17,7 @@
 		background-position: 0 100%
 	}
 </style>
-<header class="sticky top-0 z-999">
+<header class="top-0 z-50 fixed w-full">
     <div class="text-center h-20 bg-orange-300 ">
         <a href="{{ '/welcome' }}">
             <button
@@ -40,6 +40,7 @@
 
         <a href="{{ route('states') }}"><button
                     class="bg-orange-300 text-white hover:bg- hover:text-black border border-orange-300  px-4 py-2 mx-0 outline-none focus:shadow-outline link link-underline link-underline-black ">States</button></a>
+
 
 {{--
         <a><button
