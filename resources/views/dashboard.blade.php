@@ -170,7 +170,7 @@
         </div>
         {{-- ------------------------------------------------------------------------------------------------------------------------ --}}
         {{-- <div>
-            <div>
+            {{-- <div>
                 <h1 class="text-2xl font-bold  ml-[17%] mt-14">Available Blood Around you</h1>
             </div>
             <div class='max-w-md mx-auto'>
@@ -207,7 +207,7 @@
                 </tr>
             @endforelse
         </table> --}}
-        {{-- <div class="mr-28 mt-4 mb-11">{{ $bloodbanks->links() }}</div> --}}
+        {{-- <div class="mr-28 mt-4 mb-11">{{ $bloodbanks->links() }}</div>  --}}
 <!-- visit www.amcharts.com to download -->
 <section class="py-8 ml-36">
     <div class="container px-4 mx-auto">
@@ -223,7 +223,7 @@
                     <path d="M0 8C0 12.4183 3.58172 16 8 16V0C3.58172 0 0 3.58172 0 8Z" fill="#F67A28"></path>
                   </svg>
                 </span>
-                <span>Patients
+                <span>Discharge
                 </span>
               </div>
               <div class="ml-6 inline-flex text-xs text-gray-500">

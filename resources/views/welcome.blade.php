@@ -13,10 +13,10 @@
         scroll-behavior: smooth;
     }
     * {
-  cursor: none;
+  /* cursor: none; */
 }
 
-.your-cursor {
+/* .your-cursor {
   position: absolute;
   height: 15px;
   width: 15px;
@@ -40,7 +40,7 @@
   z-index: 7;
   width: 6px;
   height: 6px;
-}
+} */
 </style>
 
 
@@ -50,9 +50,9 @@
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
+    {{-- <div class='your-cursor'></div>
     <div class='your-cursor'></div>
-    <div class='your-cursor'></div>
-    <div class='your-cursor'></div>
+    <div class='your-cursor'></div> --}}
     <section id="home">
         <div>
             <img src="https://infyhms-staging.sgp1.cdn.digitaloceanspaces.com/903/Home-HMS.png" alt="herosection"
@@ -552,7 +552,7 @@
                     </div>
                     <h5 class="text-xl font-medium mb-4">Fresh Design</h5>
                     <p class="text-gray-600 mb-3">FWR blocks bring in an air of fresh design with their creative layouts and blocks, which are easily customizable.</p>
-                  </div>
+                  </div>    
                 </div>
                 <div class="px-4 md:w-1/3 mt-6 md:mt-0">
                   <div class="feature-box text-center p-4 md:p-6 max-w-sm mx-auto border-2 border-solid border-gray-300 rounded md:h-full">
@@ -597,7 +597,7 @@
 
 
 </body>
-<script>
+{{-- <script>
     $(document).mousemove(function(e) {
   $(".your-cursor")
     .eq(0)
@@ -626,5 +626,5 @@ $(document).on("mousemove", function(e) {
   mouseX = e.pageX;
   mouseY = e.pageY;
 });
-</script>
+</script> --}}
 </html>

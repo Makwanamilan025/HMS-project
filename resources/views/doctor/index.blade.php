@@ -30,7 +30,7 @@
                             <h1 class="font-bold text-2xl  text-slate-600">Doctor</h1>
                             <a href="{{ route('doctor.create') }}"
                                 class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                                type="button">
+                                type="button"> <i class="fa-solid fa-plus"></i>
                                 Create Doctor
                             </a>
                         </div>
@@ -61,14 +61,14 @@
                                             {{-- data-modal-toggle="edit-button" --}}
                                             <a href="{{ route('doctor.edit', $doctor->id) }}"
                                                 data-item="{{ $doctor }}" data-modal-toggle="edit-button"
-                                                class="px-4 py-2 edit-button text-white bg-blue-700 rounded-md hover:bg-blue-900"><i class="fa-solid fa-pen-to-square"></i></a>
+                                                class="px-4 py-2 edit-button text-white bg-blue-700 rounded-md hover:bg-blue-900">Edit <i class="fa-solid fa-pen-to-square"></i></a>
                                         </td>
                                         <td>
                                             <!-- Modal toggle -->
                                             <div class="flex justify-center m-3 ">
                                                 <button id="deleteButton" data-modal-toggle="deleteModal"
                                                     class="block text-white  bg-red-700 hover:bg-red-900 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 "
-                                                    type="button">
+                                                    type="button">Delete
                                                     <i class="fa-solid fa-trash"></i>
                                                 </button>
                                             </div>
