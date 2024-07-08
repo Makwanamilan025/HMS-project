@@ -30,6 +30,13 @@
         </div>
         <div class="font-bold text-lg mt-20 ml-9">
             Welcome {{ $users->name }}
+            
+        </div>
+        <div class="text-center">
+            <h1 class="text-2xl font-bold mb-12 ml-48">Appointment PDF</h1>
+            <a href="{{route('mpdf')}}" class="px-4 py-2  ml-[1300px] bg-orange-500 text-white font-semibold rounded-lg shadow-md hover:bg-orange-700">
+                Create PDF
+            </a>
         </div>
     </div>
     <div class=" w-[70%] ml-[30%] mt-32  ">
@@ -63,6 +70,11 @@
                     <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0 bg-red-400 w-14">
                         <b>{{ $appointments->is_conform ? ' confirm ' : 'Pending' }}</b></dd>
                 </div>
+                
+                {{-- <body class="flex items-center justify-center h-screen bg-gray-100"> --}}
+                    
+                </body>
+
                 {{-- <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
           <dt class="text-sm font-medium leading-6 text-gray-900">Attachments</dt>
           <dd class="mt-2 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
@@ -78,8 +90,8 @@
                   </div>
                 </div>
                 <div class="ml-4 flex-shrink-0">
-                  <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">Download</a>
                 </div>
+                  <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">Download</a>
               </li>
               <li class="flex items-center justify-between py-4 pl-4 pr-5 text-sm leading-6">
                 <div class="flex w-0 flex-1 items-center">

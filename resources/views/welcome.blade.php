@@ -13,7 +13,7 @@
         scroll-behavior: smooth;
     }
     * {
-  cursor: none;
+  /* cursor: none;
 }
 
 .your-cursor {
@@ -40,7 +40,7 @@
   z-index: 7;
   width: 6px;
   height: 6px;
-}
+} */
 </style>
 
 

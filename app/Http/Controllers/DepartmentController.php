@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Department;
+use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,7 @@ class DepartmentController extends Controller
         $departments = department::paginate(8);
 
         // $departments = department::all();
-        return view('department.index',['departments' => $departments]);
+        return view('Department.index',['departments' => $departments]);
 
     }
 
@@ -25,7 +26,7 @@ class DepartmentController extends Controller
      */
     public function create()
     {
-        return view('department.create');
+        return view('Department.create');
     }
 
     /**
@@ -37,7 +38,7 @@ class DepartmentController extends Controller
 
       $department =  department::create($input);
 
-      return redirect()->route('department.index', compact('department'));
+      return redirect()->route('Department.index', compact('department'));
 
     }
 
@@ -56,7 +57,7 @@ class DepartmentController extends Controller
     {
         $departments = department::find($id);
 
-        return view('department.edit',compact('departments'));
+        return view('Department.edit',compact('departments'));
     }
 
     /**
@@ -70,7 +71,7 @@ class DepartmentController extends Controller
 
         $department->update($input);
 
-        return redirect()->route('department.index')->with('department','department Updated Successfully');
+        return redirect()->route('Department.index')->with('department','department Updated Successfully');
     }
 
     /**
@@ -79,6 +80,6 @@ class DepartmentController extends Controller
     public function destroy(Department $department ,$id)
     {
         department::findOrFail($id)->delete();
-        return redirect()->route('department.index');
+        return redirect()->route('Department.index');
     }
 }

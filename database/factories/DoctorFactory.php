@@ -2,27 +2,25 @@
 
 namespace Database\Factories;
 
-use App\Models\User;
+use App\Models\Doctor;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
+
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Doctor>
  */
-class UserFactory extends Factory
+class DoctorFactory extends Factory
 {
     /**
      * Define the model's default state.
      *
      * @return array<string, mixed>
      */
-
-      /**
+    /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = User::class;
+    protected $model = Doctor::class;
 
     /**
      * Define the model's default state.
@@ -32,11 +30,10 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
+            'department_id' => \App\Models\Department::factory(),
             'name' => $this->faker->name,
             'email' => $this->faker->unique()->safeEmail,
-            'email_verified_at' => now(),
-            'password' => Hash::make('password'), // password
-            'remember_token' => Str::random(10),
+            'image' => $this->faker->imageUrl(640, 480, 'people', true, 'Doctor'),
         ];
     }
 }

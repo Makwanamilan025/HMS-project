@@ -24,12 +24,16 @@ class statesController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for generatePDF a new PDF.
      */
-    public function create()
-    {
+    // public function generatePDF()
+    // {
+    //     $users = User::where('parson','appoiment')->latest()->first();
+    //     $appointments = appointment::latest()->first();
+    //     dd(  $appointments);
 
-    }
+    //     return view('welcomecomponents.stutes',['users' => $users , 'appointments' => $appointments ]);
+    // }
 
     /**
      * Store a newly created resource in storage.

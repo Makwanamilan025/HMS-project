@@ -11,6 +11,7 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Doctor2Controller;
 use App\Http\Controllers\PatientController;
+use App\Http\Controllers\PDFController;
 use App\Http\Controllers\statesController;
 
 
@@ -49,10 +50,14 @@ Route::get('/contect', function () {
     return view('welcomecomponents.contect');
 })->name('contect');
 
+//create pdf route
+
+Route::get('/generate-mpdf',[PDFController::class,'generatePDF'])->name('mpdf');
 
 //route fore states
 
 Route::get('/states', [statesController::class, 'index'])->name('states');
+// Route::get('/states/pdf', [statesController::class, 'generatePDF'])->name('states');
 Route::get('/create', [statesController::class, 'create'])->name('/states');
 
 
