@@ -67,13 +67,13 @@
                 ipsa molestias saepe fuga.</h1>
         </div>
         <div>
-            <a href="{{ route('user.appointment.create') }}"> <button
+            <a href="{{ route('appointments.create') }}"> <button
                     class="btn-primary transition duration-300 ease-in-out focus:outline-none focus:shadow-outline bg-orange-500 text-white px-4 py-2 mx-0 outline-none focus:shadow-outline hover:bg-orange-600  font-normal mt-12 ml-96 rounded-l-lg hover:shadow-lg">
                     Appoinment </button> </a>
 
-            <a href="{{ route('states') }}">
+            <a href="{{ route('statesabc') }}">
                 <button
-                    class="btn-outline-primary transition duration-300 ease-in-out focus:outline-none focus:shadow-outline border border-orange-500 hover:bg-orange-600 text-black hover:text-white font-normal py-2 px-4 rounded-r-lg hover:shadow-lg">status</button></a>
+                    class="btn-outline-primary transition duration-300 ease-in-out focus:outline-none focus:shadow-outline border border-orange-500 hover:bg-orange-600 text-black hover:text-white font-normal py-2 px-4 rounded-r-lg hover:shadow-lg">Status</button></a>
         </div>
     </section>
     {{-- teem section --}}
@@ -528,13 +528,13 @@
             </div>
 
             <div class="ml-[850px] mb-10 mt-12">
-                <a href="{{ route('user.appointment.create') }}"
+                <a href="{{ route('appointments.create') }}"
                     class="border-2 border-solid border-orange-600 rounded py-2 px-12 text-xl text-orange-600 hover:bg-orange-600 hover:text-white mt-4 transition-color duration-300">Book
                     Appointment</a>
             </div>
         </div>
 
-        {{-- <div class="feature-1 py-6 md:py-12">
+        <div class="feature-1 py-6 md:py-12" >
             <div class="container px-4 mx-auto">
               <div class="flex -mx-4">
                 <div class="px-4 text-center md:w-10/12 xl:w-8/12 mx-auto">
@@ -574,7 +574,9 @@
                 </div>
               </div>
             </div>
-          </div> --}}
+          </div> 
+
+          
 
         {{-- -------------------------------------------------------------------blog---------------------------------------------- --}}
 

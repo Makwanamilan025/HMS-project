@@ -31,7 +31,7 @@
                         <h1 class="font-bold text-2xl  text-slate-600">Create Appointment</h1>
                     </div>
                     <div class="px-6 py-6 lg:px-8 ">
-                        <form class="space-y-6 py-9 " action="{{ route('user.appointment.store') }}" method="post"
+                        <form class="space-y-6 py-9 " action="{{ route('appointments.store') }}" method="post"
                             enctype="multipart/form-data">
                             @csrf
                             <div>

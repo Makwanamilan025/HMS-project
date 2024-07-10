@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\bloodbank;
+use App\Models\Bloodbank;
 use Illuminate\Http\Request;
 
 class BloodbankController extends Controller
@@ -16,7 +16,7 @@ class BloodbankController extends Controller
 
         // $bloodbanks = bloodbank::latest()->paginate(8);
 
-        $bloodbanks = bloodbank::latest()->paginate(7);
+        $bloodbanks = Bloodbank::latest()->paginate(7);
         // $bloodbanks = bloodbank::all();
 
       return view('bloodbank.inde',compact('bloodbanks'));
@@ -39,7 +39,7 @@ class BloodbankController extends Controller
 
         $input = $request->all();
 
-        bloodbank::create($input);
+        Bloodbank::create($input);
 
         return redirect()->route('bloodbank.index');
 
@@ -75,7 +75,7 @@ class BloodbankController extends Controller
      */
     public function destroy(string $id)
     {
-        bloodbank::findOrFail($id)->delete();
+        Bloodbank::findOrFail($id)->delete();
         return redirect()->route('bloodbank.index');
         // return view('bloodbank.inde');
     }

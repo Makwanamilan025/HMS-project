@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Appointment;
 use App\Models\Doctor;
 use Illuminate\Http\Request;
-use App\Models\bloodbank;
+use App\Models\Bloodbank;
 use App\Models\Department;
 use App\Models\Patient;
 use App\Models\User;
@@ -18,7 +18,7 @@ class DeshbordController extends Controller
 
     public function bloodbank()
     {
-        $bloodbank = bloodbank::all();
+        $bloodbank = Bloodbank::all();
 
         return view('dashboard', compact('bloodbank'));
     }
@@ -26,10 +26,10 @@ class DeshbordController extends Controller
     public function index()
     {
 
-        $bloodbanks = bloodbank::count();
+        $bloodbanks = Bloodbank::count();
         $appointments = Appointment::count();
         $Doctor = Doctor::count();
-        $bloodbank = bloodbank::count();
+        $bloodbank = Bloodbank::count();
         $Patient = Patient::count();
         $department = Department::count();
         $user = User::count();

@@ -101,7 +101,7 @@
         </div>
 
         <div class="ml-[850px] mt-12">
-            <a href="{{route('user.appointment.create')}}"
+            <a href="{{route('appointments.create')}}"
                 class="btn-outline-primary transition duration-300 ease-in-out focus:outline-none focus:shadow-outline border border-orange-500 hover:bg-orange-500 text-orange-500 hover:text-white font-normal py-2 px-4 rounded-r-lg rounded-l-lg hover:shadow-lg">Book
                 Appointment</a>
         </div>

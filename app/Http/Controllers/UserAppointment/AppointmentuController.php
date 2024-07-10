@@ -1,32 +1,36 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\UserAppointment;
+use App\Models\Department;
+use App\Models\Doctor;
+use App\Models\User;
+use App\Models\Appointment;
 use App\Http\Controllers\Controller;
-use App\Models\Patient;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
-class PatientController extends Controller
+class AppointmentuController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $data = Patient::all();
-
-        $data = Patient::paginate(8);
-
-        return view('patients.index', ['data' => $data]);
+        return view('welcomecomponents.appointment');
     }
-
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+        
+        $department = Department::all();
+        $doctor = Doctor::all();
+
+        $input['parson'] = 'user';
+
+        return view('welcomecomponents.appointment',compact('department','doctor'));
     }
 
     /**
@@ -34,7 +38,21 @@ class PatientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        $input['is_conform'] = false;
+
+
+        $appointment = Appointment::create($input);
+
+        $user = user::create([
+            'email' => $input['email'],
+            'name' => $input['name'],
+            'parson' => 'appoiment',
+            'password' => Hash::make($input['password']),
+
+        ]);
+
+        return redirect()->route('states');
     }
 
     /**
@@ -66,15 +84,6 @@ class PatientController extends Controller
      */
     public function destroy(string $id)
     {
-        Patient::findOrFail($id)->delete();
-
-        return view('patients.index');
-    }
-
-    public function confirm(Request $request, patient $patient)
-    {
-        $patient->states = true;
-        $patient->save();
-        return redirect()->route('patient.index');
+        //
     }
 }

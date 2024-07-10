@@ -28,7 +28,7 @@
                     <div class="p-6 text-gray-900">
                         <div class="flex justify-between">
                             <h1 class="font-bold text-2xl  text-slate-600">Doctor</h1>
-                            <a href="{{ route('doctor.create') }}"
+                            <a href="{{ route('doctors.create') }}"
                                 class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                                 type="button">
                                 Create Doctor
@@ -59,7 +59,7 @@
                                         <td class="py-2"> {{ @$doctor->department->name }} </td>
                                         <td class="py-2">
                                             {{-- data-modal-toggle="edit-button" --}}
-                                            <a href="{{ route('doctor.edit', $doctor->id) }}"
+                                            <a href="{{ route('doctors.edit', $doctor->id) }}"
                                                 data-item="{{ $doctor }}" data-modal-toggle="edit-button"
                                                 class="px-4 py-2 edit-button text-white bg-blue-700 rounded-md hover:bg-blue-900"><i class="fa-solid fa-pen-to-square"></i></a>
                                         </td>
@@ -108,7 +108,7 @@
                                                             <form
                                                                 class="px-4 py-2 w-7/12 text-white bg-red-700 rounded-md hover:bg-red-900"
                                                                 style="    width: 70px;height: 36px;"
-                                                                action="{{ route('doctor.destroy', $doctor->id) }}"
+                                                                action="{{ route('doctors.destroy', $doctor->id) }}"
                                                                 method="DELETE">
                                                                 <button type="submit">Delet</button>
                                                                 @csrf

@@ -8,9 +8,9 @@ use Illuminate\Http\Request;
 class Doctor2Controller extends Controller
 {
   public function doctor(){
-    // $data = Doctor::paginate(4);
+    
  $data = Doctor::all();
-
+dd($data);
  return view('welcomecomponents.doctor', ['data' => $data]);
   }
 

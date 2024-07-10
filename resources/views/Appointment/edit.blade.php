@@ -29,7 +29,7 @@
                     <div class="p-6 text-gray-900">
                         <div class="flex justify-between">
                             <h1 class="font-bold text-2xl  text-slate-600">Update Appointment</h1>
-                            <a href="{{ route('appointment.index') }}"
+                            <a href="{{ route('appointments.index') }}"
                                 class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                                 type="button">
                                 <i class="fa-solid fa-rotate-left"></i>
@@ -37,7 +37,7 @@
                         </div>
 
                         <div class="px-6 py-6 lg:px-8">
-                            <form class="space-y-6" action="{{ route('appointment.update', $appointments->id) }}"
+                            <form class="space-y-6" action="{{ route('appointments.update', $appointments->id) }}"
                                 method="post" enctype="multipart/form-data">
                                 @csrf
                                 @method('put')

@@ -9,6 +9,8 @@
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Appointment</title>
 </head>
 
@@ -31,7 +33,7 @@
                         <div class="flex justify-between">
                             {{-- <h1 class="font-bold text-2xl  text-slate-600">Appointment</h1> --}}
                             <div>
-                                <a href="{{ route('appointment.create') }}"
+                                <a href="{{ route('appointments.create') }}"
                                     class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                                     type="button">
                                     <i class="fa-solid fa-plus"></i>  Create Appointment
@@ -39,7 +41,7 @@
                             </div>
 
                             <div class="relative">
-                                <form action="{{ route('appointment.index') }}" method="GET">
+                                <form action="{{ route('appointments.index') }}" method="GET">
 
                                     <input type="search"class="form-control rounded-l-lg " placeholder="Search..."
                                         name="search" value="{{ isset($search) && !empty($search) ? $search : '' }}"
@@ -60,7 +62,6 @@
                             </a>
                         </div> --}}
                         </div>
-
                         <table class="w-full text-center">
                             <thead>
                                 <tr class="border-b border-b-sky-400 text-slate-700 text-1xl">
@@ -110,14 +111,14 @@
                                             {{ @$appointment->is_conform ? ' confirm ' : 'Pending' }}
                                         </td>
                                         <td>
-                                            <a href="{{ route('appointment.confirm', $appointment->id) }}"
+                                            <a href="{{ route('appointments.confirm', $appointment->id) }}"
                                                 id="btnSuccess"
                                                 class="bg-lime-500 text-white rounded-lg py-2 px-3  hover:bg-lime-600">
                                                 <i class="fa-solid fa-check"></i> confirm</a>
                                         </td>
                                         <td class="py-3">
                                             {{-- data-modal-toggle="edit-button" --}}
-                                            <a href="{{ route('appointment.edit', $appointment->id) }}"
+                                            <a href="{{ route('appointments.edit', $appointment->id) }}"
                                                 data-item="{{ $appointment }}" data-modal-toggle="edit-button"
                                                 class="px-5 py-2.5 edit-button text-white bg-blue-700 rounded-md hover:bg-blue-900"><i
                                                     class="fa-solid fa-pen-to-square"></i>Edit</a>
@@ -166,7 +167,7 @@
                                                             <form
                                                                 class="px-4 py-2 w-7/12 text-white bg-red-700 rounded-md hover:bg-red-900"
                                                                 style="width: 67px; height: 36px"
-                                                                action="{{ route('appointment.destroy', $appointment->id) }}"
+                                                                action="{{ route('appointments.destroy', $appointment->id) }}"
                                                                 method="delete">
                                                                 <button type="submit">Delete</button>
                                                                 @csrf
@@ -191,14 +192,23 @@
         @endforelse
         </tbody>
         </table>
+
+      
+
         <div class="container my-4 flex justify-end">
             {{ $appointments->links() }}
         </div>
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full flex items-center mt-[20px]">
+            <i class="fas fa-download mr-2"></i>
+            <a href="{{route('pdfcreate')}}"> Appointments PDF</a>
+        </button>
         </div>
         </div>
         </div>
         </div>
     </x-app-layout>
+
+    
     <!-- jquery -->
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <!-- toastr -->

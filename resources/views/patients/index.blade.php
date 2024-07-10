@@ -64,7 +64,7 @@
                                                 class="px-4 py-2 edit-button text-white bg-blue-700 rounded-md hover:bg-blue-900">edit</a> --}}
                                         {{-- </td> --}}
                                         <td class="py-2 mx-4 px-4">
-                                            <a href="{{ route('patient.confirm', $patients->id) }}"
+                                            <a href="{{ route('patients.confirm', $patients->id) }}"
                                                 class="bg-lime-500 text-white rounded-lg py-2 px-6 hover:bg-lime-600"><i
                                                     class="fa-solid fa-check"></i>
                                             </a>

@@ -66,7 +66,7 @@
 
         <x-side-bar />
         <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-4 md:grid-cols-2 mt-5 mx-64 gap-4 mr-10">
-            <a href="{{ route('appointment.index') }}">
+            <a href="{{ route('appointments.index') }}">
                 <div
                     class="bg-white flex items-center justify-between  shadow-sm rounded-lg hover:shadow-lg h-32  hover:font-bold transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">
                     <div class="p-6 text-gray-900 flex justify-start text-center gap-2 items-center">
@@ -79,7 +79,7 @@
                     </div>
                 </div>
             </a>
-            <a href="{{ route('user.index') }}">
+            <a href="{{ route('user') }}">
                 <div
                     class="bg-white flex items-center justify-between  shadow-sm rounded-lg hover:shadow-lg h-32  hover:font-bold transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300 ">
                     <div class="p-6 text-gray-900 flex justify-start text-center gap-2 items-center">
@@ -92,7 +92,7 @@
                     </div>
                 </div>
             </a>
-            <a href="{{ route('doctor.index') }}">
+            <a href="{{ route('doctors.index') }}">
                 <div
                     class="bg-white flex items-center justify-between  shadow-sm rounded-lg hover:shadow-lg h-32  hover:font-bold transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">
                     <div class="p-6 text-gray-900 flex justify-start text-center gap-2 items-center">
@@ -105,7 +105,7 @@
                     </div>
                 </div>
             </a>
-            <a href="{{ route('department.index') }}">
+            <a href="{{ route('departments.index') }}">
                 <div
                     class="bg-white flex items-center justify-between  shadow-sm rounded-lg hover:shadow-lg h-32  hover:font-bold transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">
                     <div class="p-6 text-gray-900 flex justify-start text-center gap-2 items-center">
@@ -131,7 +131,7 @@
                     </div>
                 </div>
             </a>
-            <a href="{{ route('patient.index') }}">
+            <a href="{{ route('patients.index') }}">
                 <div
                     class="bg-white flex items-center justify-between  shadow-sm rounded-lg hover:shadow-lg h-32  hover:font-bold transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">
                     <div class="p-6 text-gray-900 flex justify-start text-center gap-2 items-center">

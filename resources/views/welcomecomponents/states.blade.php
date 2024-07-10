@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>states</title>
+    <title>status</title>
 </head>
 <style></style>
 
@@ -29,15 +29,10 @@
                 alt="Sunsetin the mountains">
         </div>
         <div class="font-bold text-lg mt-20 ml-9">
-            Welcome {{ $users->name }}
+            {{-- Welcome {{ $users->name }} --}}
             
         </div>
-        <div class="text-center">
-            <h1 class="text-2xl font-bold mb-12 ml-48">Appointment PDF</h1>
-            <a href="{{route('mpdf')}}" class="px-4 py-2  ml-[1300px] bg-orange-500 text-white font-semibold rounded-lg shadow-md hover:bg-orange-700">
-                Create PDF
-            </a>
-        </div>
+        
     </div>
     <div class=" w-[70%] ml-[30%] mt-32  ">
         <div class="px-4 sm:px-0">
@@ -48,27 +43,27 @@
             <dl class="divide-y divide-gray-100">
                 <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                     <dt class="text-sm font-medium leading-6 text-gray-900">Full name</dt>
-                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $appointments->name }}
+                    {{-- <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $appointments->name }} --}}
                     </dd>
                 </div>
                 <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                     <dt class="text-sm font-medium leading-6 text-gray-900">Mobile for</dt>
-                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $appointments->mobile }}
+                    {{-- <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $appointments->mobile }}/ --}}
                     </dd>
                 </div>
                 <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                     <dt class="text-sm font-medium leading-6 text-gray-900">Email address</dt>
-                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $users->email }}</dd>
+                    {{-- <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $users->email }}</dd> --}}
                 </div>
                 <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                     <dt class="text-sm font-medium leading-6 text-gray-900">Address</dt>
-                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $appointments->address }}
+                    {{-- <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $appointments->address }} --}}
                     </dd>
                 </div>
                 <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                     <dt class="text-sm font-medium leading-6 text-gray-900">Appointment</dt>
                     <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0 bg-red-400 w-14">
-                        <b>{{ $appointments->is_conform ? ' confirm ' : 'Pending' }}</b></dd>
+                        {{-- <b>{{ $appointments->is_conform ? ' confirm ' : 'Pending' }}</b></dd> --}}
                 </div>
                 
                 {{-- <body class="flex items-center justify-center h-screen bg-gray-100"> --}}
@@ -113,6 +108,7 @@
             </dl>
         </div>
     </div>
+  
 
     <div class="flex justify-around my-64 ml-48 mr-64">
 

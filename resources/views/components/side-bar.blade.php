@@ -12,7 +12,7 @@
             </div>
             <ul class="flex flex-col py-4">
                 <li>
-                    <a href="{{ route('deshbord') }}"
+                    <a href="{{ route('deshbord.index') }}"
                         class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
                         <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"> <i
                                 class="fa-solid fa-house text-green-500"></i>
@@ -28,7 +28,7 @@
                     </a>
                 </li> --}}
                 <li>
-                    <a href=" {{ route('user.index') }} "
+                    <a href=" {{ route('user') }} "
                         class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
                         <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i
                                 class="fa-solid fa-user text-sky-500"></i></span>
@@ -36,7 +36,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href=" {{ route('doctor.index') }} "
+                    <a href=" {{ route('doctors.index') }} "
                         class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
                         <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i
                                 class="fa-solid fa-user-doctor text-indigo-500"></i></span>
@@ -44,7 +44,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('department.index') }}"
+                    <a href="{{ route('departments.index') }}"
                         class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
                         <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i
                                 class="fa-solid fa-building text-cyan-200"></i></span>
@@ -52,7 +52,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('appointment.index') }}"
+                    <a href="{{ route('appointments.index') }}"
                         class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
                         <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i
                                 class="fa-solid fa-calendar-check text-red-500"></i></span>
@@ -61,11 +61,11 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('patient.index') }}"
+                    <a href="{{ route('patients.index') }}"
                         class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
                         <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i
                                 class="fa-solid fa-bed-pulse"></i></span>
-                        <span class="text-sm font-medium">Pesants</span>
+                        <span class="text-sm font-medium">patient</span>
                     </a>
                 </li>
                 <li>
