@@ -108,7 +108,7 @@
                                         Department</label>
                                     <select id="department_id" name="department_id"
                                         class="rounded-md bg-gray-50 border border-gray-300 w-80 p-3.5">
-                                        {{-- <option value="department" selected disabled>Department<option> --}}
+                                        <option value="department" selected disabled>Department<option>
                                         @foreach ($department as $depart)
                                             <option value="{{ $depart->id }}">{{ $depart->name }}</option>
                                         @endforeach

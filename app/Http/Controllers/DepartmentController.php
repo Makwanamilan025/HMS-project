@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Department;
-use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -14,10 +13,9 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-        $departments = department::paginate(8);
+        $departments = Department::paginate(8);
 
-        // $departments = department::all();
-        return view('Department.index',['departments' => $departments]);
+        return view('Department.index',compact('departments'));
 
     }
 
@@ -36,18 +34,10 @@ class DepartmentController extends Controller
     {
         $input = $request->all();
 
-      $department =  department::create($input);
+      $departments =  Department::create($input);
 
-      return redirect()->route('Department.index', compact('department'));
+      return redirect()->route('departments.index', compact('departments'));
 
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Department $department)
-    {
-        //
     }
 
     /**
@@ -55,7 +45,7 @@ class DepartmentController extends Controller
      */
     public function edit(Department $department ,$id)
     {
-        $departments = department::find($id);
+        $departments = Department::find($id);
 
         return view('Department.edit',compact('departments'));
     }
@@ -65,13 +55,13 @@ class DepartmentController extends Controller
      */
     public function update(Request $request, Department $department ,$id)
     {
-        $department = department::find($id);
+        $departments = Department::find($id);
 
         $input = $request->all();
 
-        $department->update($input);
+        $departments->update($input);
 
-        return redirect()->route('Department.index')->with('department','department Updated Successfully');
+        return redirect()->route('departments.index')->with('departments','department Updated Successfully');
     }
 
     /**
@@ -79,7 +69,7 @@ class DepartmentController extends Controller
      */
     public function destroy(Department $department ,$id)
     {
-        department::findOrFail($id)->delete();
-        return redirect()->route('Department.index');
+        Department::findOrFail($id)->delete();
+        return redirect()->route('departments.index');
     }
 }

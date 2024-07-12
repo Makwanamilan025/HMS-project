@@ -12,6 +12,12 @@
     html {
         scroll-behavior: smooth;
     }
+    .error {
+        color: red;
+        font-size: 0.9em;
+    }
+
+
 </style>
 
 <body>
@@ -31,7 +37,7 @@
                         <h1 class="font-bold text-2xl  text-slate-600">Create Appointment</h1>
                     </div>
                     <div class="px-6 py-6 lg:px-8 ">
-                        <form class="space-y-6 py-9 " action="{{ route('appointments.store') }}" method="post"
+                        <form class="space-y-6 py-9 " action="{{ route('appointment.store') }}" method="post"
                             enctype="multipart/form-data">
                             @csrf
                             <div>
@@ -40,7 +46,10 @@
                                     Name</label>
                                 <input type="name" name="name" id="name"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-80 p-3.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                                    placeholder="enter name" required>
+                                    placeholder="enter name">
+                                    @error('name')
+                                      <div class="error">{{ $message }}</div>
+                                    @enderror
 
                                 <label for="mobile"
                                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -49,7 +58,10 @@
                                     Mobile</label>
                                 <input type="phone" name="mobile" id="mobile" style="margin-left: 450px;"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-80 p-3.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                                    placeholder="+91............" required>
+                                    placeholder="+9100091000" >
+                                    @error('mobile')
+                                      <div class="error">{{ $message }}</div>
+                                    @enderror
 
                             </div>
                             <div>
@@ -58,8 +70,10 @@
                                     Email</label>
                                 <input type="email" name="email" id="email"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-80 p-3.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                                    placeholder="enter email" required>
-
+                                    placeholder="enter email" >
+                                    @error('email')
+                                    <div class="error">{{ $message }}</div>
+                                  @enderror
                                 <label for="Password"
                                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                                     style="margin-left: 450px;
@@ -67,7 +81,10 @@
                                     Password</label>
                                 <input type="password" name="password" id="password"style="margin-left: 450px;"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-80 p-3.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                                    placeholder="Enter password" required>
+                                    placeholder="Enter password" >
+                                    @error('password')
+                                    <div style="color:red  class="error"  >{{ $message }}</div>
+                                  @enderror
 
                             </div>
                             <div class="grid grid-cols-3">
@@ -116,12 +133,11 @@
                                         class="rounded-md bg-gray-50 border border-gray-300 w-80 p-3.5">
                                         <option value="department" selected disabled>Department
                                         <option>
-                                            @foreach ($department as $depart)
+                                            @foreach ($departments as $depart)
                                         <option value="{{ $depart->id }}">{{ $depart->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
-
                                 <div>
                                     <label for="Doctor"
                                         class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -130,7 +146,7 @@
                                     <select style="" id="" name="doctor_id"
                                         class="rounded-md bg-gray-50 border border-gray-300 w-80 p-3.5">
                                         <option value="" selected disabled>Doctor</option>
-                                        @foreach ($doctor as $doctor)
+                                        @foreach ($doctors as $doctor)
                                             <option value="{{ $doctor->id }}">{{ $doctor->name }}</option>
                                         @endforeach
                                     </select>
@@ -149,7 +165,7 @@
 
                             <div>
                                 <input id="appointment" type="datetime-local" name="date_time"
-                                    min="2024-04-01T08:30" max="2024-04-30T16:30" required />
+                                    min="2024-04-01T08:30" max="2024-04-30T16:30" />
                                 <span class="validity"></span>
                                 &nbsp;
                                 <label for="appointment">

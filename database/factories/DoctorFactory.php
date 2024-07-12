@@ -1,39 +1,25 @@
 <?php
-
 namespace Database\Factories;
 
 use App\Models\Doctor;
+use App\Models\Department;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Doctor>
- */
 class DoctorFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
-    /**
-     * The name of the factory's corresponding model.
-     *
-     * @var string
-     */
     protected $model = Doctor::class;
 
-    /**
-     * Define the model's default state.
-     *
-     * @return array
-     */
-    public function definition(): array
+    public function definition()
     {
         return [
-            'department_id' => \App\Models\Department::factory(),
+            'department_id' => Department::factory(),
             'name' => $this->faker->name,
             'email' => $this->faker->unique()->safeEmail,
             'image' => $this->faker->imageUrl(640, 480, 'people', true, 'Doctor'),
+            'created_at' => now(),
+            'updated_at' => now(),
         ];
     }
 }
+
+

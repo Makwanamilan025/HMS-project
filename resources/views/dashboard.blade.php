@@ -101,7 +101,7 @@
                     </div>
 
                     <div>
-                        <h2 class="font-bold text-3xl mr-4 text-slate-600">{{$Doctor}}</h2>
+                        <h2 class="font-bold text-3xl mr-4 text-slate-600">{{$doctors}}</h2>
                     </div>
                 </div>
             </a>
@@ -114,7 +114,7 @@
                     </div>
 
                     <div>
-                        <h2 class="font-bold text-3xl mr-4 text-slate-600">{{$Department}}</h2>
+                        <h2 class="font-bold text-3xl mr-4 text-slate-600">{{$departments}}</h2>
                     </div>
                 </div>
             </a>
@@ -123,11 +123,11 @@
                     class="bg-white flex items-center justify-between  shadow-sm rounded-lg hover:shadow-lg h-32  hover:font-bold transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 duration-300">
                     <div class="p-6 text-gray-900 flex justify-start text-center gap-2 items-center">
                         <i class="fa-solid fa-hand-holding-droplet text-red-600"></i>
-                        <h1 class="text-xl text-gray-600">Bloodbanks</h1>
+                        <h1 class="text-xl text-gray-600">Bloodbank</h1>
                     </div>
 
                     <div>
-                        <h2 class="font-bold text-3xl mr-4 text-slate-600">{{$bloodbank}}</h2>
+                        <h2 class="font-bold text-3xl mr-4 text-slate-600">{{$bloodbanks}}</h2>
                     </div>
                 </div>
             </a>
@@ -139,7 +139,7 @@
                         <h1 class="text-xl text-gray-600">Patients</h1>
                     </div>
                     <div>
-                        <h2 class="font-bold text-3xl mr-4 text-slate-600">{{$Patient}}</h2>
+                        <h2 class="font-bold text-3xl mr-4 text-slate-600">{{$patients}}</h2>
                     </div>
                 </div>
             </a>

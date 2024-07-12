@@ -24,46 +24,52 @@
 </div> --}}
 
     <div class="overflow-hidden shadow-lg hover:shadow-xl rounded mx-auto mt-8 h-32 flex">
-        <div> <img class="w-12 ml-36 mt-16 "
-                src="https://infyhms-staging.sgp1.cdn.digitaloceanspaces.com/1084/InfyHMS-80.png"
+        <div> <img class="w-28 ml-36 mt-8 rounded-full "
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFdsH9Z4C4Fa0reALufXP4x1um2UpwUu9stg&s"
                 alt="Sunsetin the mountains">
         </div>
         <div class="font-bold text-lg mt-20 ml-9">
-            {{-- Welcome {{ $users->name }} --}}
+            Welcome {{ $users->name }}
             
         </div>
         
     </div>
     <div class=" w-[70%] ml-[30%] mt-32  ">
         <div class="px-4 sm:px-0">
-            <h3 class=" font-semibold leading-7 text-gray-900 text-2xl">Applicant Information</h3>
-            <p class="mt-1 max-w-2xl  leading-6 text-gray-500 text-xl">Personal details and application.</p>
+            <h3 class=" font-semibold leading-7 text-gray-900 text-2xl">Appointment Information</h3>
+            <p class="mt-1 max-w-2xl  leading-6 text-gray-500 text-xl">Personal details and Appointment.</p>
         </div>
         <div class="mt-6 border-t border-gray-100">
             <dl class="divide-y divide-gray-100">
                 <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                    <dt class="text-sm font-medium leading-6 text-gray-900">Full name</dt>
-                    {{-- <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $appointments->name }} --}}
+                    <dt class="text-sm font-medium leading-6 text-gray-900">Name</dt>
+                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $appointments->name }}
                     </dd>
                 </div>
                 <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                    <dt class="text-sm font-medium leading-6 text-gray-900">Mobile for</dt>
-                    {{-- <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $appointments->mobile }}/ --}}
+                    <dt class="text-sm font-medium leading-6 text-gray-900">Mobile </dt>
+                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $appointments->mobile }}/
                     </dd>
                 </div>
                 <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                    <dt class="text-sm font-medium leading-6 text-gray-900">Email address</dt>
-                    {{-- <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $users->email }}</dd> --}}
+                    <dt class="text-sm font-medium leading-6  font-bold">Blood group</dt>
+                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0  ">
+                        <b>{{ $appointments->blad_grup}}</b></dd>
                 </div>
                 <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                    <dt class="text-sm font-medium leading-6 text-gray-900">Address</dt>
-                    {{-- <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $appointments->address }} --}}
+                    <dt class="text-sm font-medium leading-6 text-gray-900">Department</dt>
+                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $appointments->Department->name }}
                     </dd>
                 </div>
                 <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                    <dt class="text-sm font-medium leading-6 text-gray-900">Appointment</dt>
+                    <dt class="text-sm font-medium leading-6 text-gray-900">Doctor name</dt>
+                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0  w-14">
+                        <b>{{ $appointments->doctor->name }}</b></dd>
+                </div>
+                <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                    <dt class="text-sm font-medium leading-6 text-gray-900">Appointment Status</dt>
                     <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0 bg-red-400 w-14">
-                        {{-- <b>{{ $appointments->is_conform ? ' confirm ' : 'Pending' }}</b></dd> --}}
+                        <b>{{ $appointments->is_conform ? ' confirm ' : 'Pending' }}</b></dd>
                 </div>
                 
                 {{-- <body class="flex items-center justify-center h-screen bg-gray-100"> --}}
@@ -108,7 +114,6 @@
             </dl>
         </div>
     </div>
-  
 
     <div class="flex justify-around my-64 ml-48 mr-64">
 

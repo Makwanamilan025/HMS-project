@@ -12,7 +12,7 @@ use App\Models\Patient;
 use App\Models\User;
 
 
-class DeshbordController extends Controller
+class DashbordController extends Controller
 {
 
 
@@ -28,15 +28,12 @@ class DeshbordController extends Controller
 
         $bloodbanks = Bloodbank::count();
         $appointments = Appointment::count();
-        $Doctor = Doctor::count();
+        $doctors = Doctor::count();
         $bloodbank = Bloodbank::count();
-        $Patient = Patient::count();
-        $department = Department::count();
-        $user = User::count();
+        $patients = Patient::count();
+        $departments = Department::count();
+        $users = User::count();
 
-        return view('dashboard', [
-            'appointments' => $appointments, 'bloodbank' => $bloodbank,'bloodbank' => $bloodbanks, 'Doctor' => $Doctor,
-            'Patient' => $Patient, 'Department' => $department, 'User' => $user
-        ]);
+        return view('dashboard', compact('bloodbanks','appointments','doctors','bloodbank','patients','departments','users'));
     }
 }

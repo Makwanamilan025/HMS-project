@@ -36,7 +36,7 @@
                         </div>
 
                         <div class="px-6 py-6 lg:px-8">
-                            <form class="space-y-6" action=" {{ route('doctors.update', $doctor->id) }} " method="POST"
+                            <form class="space-y-6" action=" {{ route('doctors.update', $doctors->id) }} " method="POST"
                                 enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
@@ -44,7 +44,7 @@
                                     <label for="name"
                                         class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                                         Name</label>
-                                    <input type="name" name="name" id="name" value="{{ $doctor->name }}"
+                                    <input type="name" name="name" id="name" value="{{ $doctors->name }}"
                                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                                         placeholder="enter name" required>
                                 </div>
@@ -53,7 +53,7 @@
                                     <label for="email"
                                         class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                                         Email</label>
-                                    <input type="email" name="email" id="email" value="{{ $doctor->email }}"
+                                    <input type="email" name="email" id="email" value="{{ $doctors->email }}"
                                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                                         placeholder="name@company.com" required>
                                 </div>
@@ -61,12 +61,12 @@
                                     <label for="department"
                                         class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select
                                         Department</label>
-                                    <select id="" name="department_id" value="{{ $doctor->department_id }}"
+                                    <select id="" name="department_id" value="{{ $doctors->department_id }}"
                                         class="rounded-md bg-gray-50 border border-gray-300 w-full">
                                         <option disabled>Department</option>
                                         @foreach ($departments as $department)
                                             <option value="{{ $department->id }}"
-                                                {{ $doctor->department_id == $department->id ? 'selected' : '' }}>
+                                                {{ $doctors->department_id == $department->id ? 'selected' : '' }}>
                                                 {{ $department->name }}</option>
                                         @endforeach
                                     </select>
@@ -75,7 +75,7 @@
                                     <label for="Profile"
                                         class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                                         Profile</label>
-                                    <input type="file" name="image" id="Profile" value="{{ $doctor->image }}"
+                                    <input type="file" name="image" id="Profile" value="{{ $doctors->image }}"
                                         placeholder="Profile"
                                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
                                 </div>

@@ -14,11 +14,9 @@ class DoctorController extends Controller
      */
     public function index()
     {
-
         $doctors = Doctor::paginate(8);
 
-
-        return view('doctor.index', ['doctors' => $doctors]);
+        return view('doctor.index',compact('doctors'));
     }
 
 
@@ -29,7 +27,7 @@ class DoctorController extends Controller
     {
         $departments = Department::all();
 
-        return view('doctor.create', ['departments' => $departments]);
+        return view('doctor.create', compact('departments'));
     }
 
     /**
@@ -47,17 +45,9 @@ class DoctorController extends Controller
             $input['image'] = $fileName;
         }
 
-        $doctors =  Doctor::create($input);
+        $doctors = Doctor::create($input);
 
-        return redirect()->route('doctor.index');
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(DoctorRequest $doctar)
-    {
-        //
+        return redirect()->route('doctors.index');
     }
 
     /**
@@ -66,8 +56,8 @@ class DoctorController extends Controller
     public function edit($id)
     {
         $departments = Department::all();
-        $doctor = doctor::find($id);
-        return view('doctor.edit', compact('doctor', 'departments'));
+        $doctors = Doctor::findOrFail($id);
+        return view('doctor.edit', compact('doctors', 'departments'));
     }
 
     /**
@@ -75,11 +65,9 @@ class DoctorController extends Controller
      */
     public function update(Request $request, $id)
     {
-
-        $doctor = doctor::find($id);
+        $doctors = Doctor::findOrFail($id);
 
         $input = $request->all();
-
 
         if ($request->hasFile('image')) {
             $image = $request->file('image');
@@ -88,10 +76,9 @@ class DoctorController extends Controller
             $input['image'] = $fileName;
         }
 
+        $doctors->update($input);
 
-        $doctor->update($input);
-
-        return redirect()->route('doctor.index')->with('doctor', 'doctor Updated Successfully');
+        return redirect()->route('doctors.index')->with('doctors', 'doctor Updated Successfully');
     }
 
     /**
@@ -101,6 +88,6 @@ class DoctorController extends Controller
     {
     
         Doctor::findOrFail($id)->delete();
-        return redirect()->route('doctor.index');
+        return redirect()->route('doctors.index');
     }
 }

@@ -235,7 +235,7 @@
         // }
 
         function displaySuccessToaster() {
-            toastr.options.timeOut = 1500; // 1.5s
+            toastr.options.timeOut = 3000; // 1.5s
             toastr.success('Success messages');
         }
 

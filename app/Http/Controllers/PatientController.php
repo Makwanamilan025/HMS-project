@@ -15,7 +15,7 @@ class PatientController extends Controller
     {
         $data = Patient::all();
 
-        $data = Patient::paginate(8);
+        $data = Patient::paginate(10);
 
         return view('patients.index', ['data' => $data]);
     }

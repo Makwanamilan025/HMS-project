@@ -71,7 +71,7 @@
                     class="btn-primary transition duration-300 ease-in-out focus:outline-none focus:shadow-outline bg-orange-500 text-white px-4 py-2 mx-0 outline-none focus:shadow-outline hover:bg-orange-600  font-normal mt-12 ml-96 rounded-l-lg hover:shadow-lg">
                     Appoinment </button> </a>
 
-            <a href="{{ route('statesabc') }}">
+            <a href="">
                 <button
                     class="btn-outline-primary transition duration-300 ease-in-out focus:outline-none focus:shadow-outline border border-orange-500 hover:bg-orange-600 text-black hover:text-white font-normal py-2 px-4 rounded-r-lg hover:shadow-lg">Status</button></a>
         </div>
@@ -361,7 +361,7 @@
                             eget aliquet quis. Suspendisse eget egestas a elementum pulvinar et feugiat blandit at. In
                             mi viverra elit nunc.</p>
                     </div>
-                    {{-- <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+                     <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
                         <dl
                             class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
                             <div class="relative pl-16">
@@ -427,7 +427,7 @@
                                     eget.</dd>
                             </div>
                         </dl>
-                    </div> --}}
+                    </div> 
                 </div>
             </div>
         </div>
@@ -528,57 +528,13 @@
             </div>
 
             <div class="ml-[850px] mb-10 mt-12">
-                <a href="{{ route('appointments.create') }}"
+                <a href="{{ route('appointment.create') }}"
                     class="border-2 border-solid border-orange-600 rounded py-2 px-12 text-xl text-orange-600 hover:bg-orange-600 hover:text-white mt-4 transition-color duration-300">Book
                     Appointment</a>
             </div>
         </div>
-
-        <div class="feature-1 py-6 md:py-12" >
-            <div class="container px-4 mx-auto">
-              <div class="flex -mx-4">
-                <div class="px-4 text-center md:w-10/12 xl:w-8/12 mx-auto">
-                  <h1 class="mb-4 text-4xl font-medium">FWR Blocks features</h1>
-                  <p class="mb-4 text-xl">The main aim of creating FWR blocks is to help designers, developers and agencies create websites and web apps quickly and easily. Each and every block uses minimal custom styling and is based on the utility first Tailwind framework.</p>
-                  <button class="border-2 border-solid border-indigo-600 rounded py-2 px-12 text-xl text-indigo-600 hover:bg-indigo-600 hover:text-white mt-4 transition-color duration-300">Learn More</button>
-                </div>
-              </div>
-
-              <div class="md:flex md:-mx-4 mt-12 md:pt-4">
-                <div class="px-4 md:w-1/3 mt-6 md:mt-0">
-                  <div class="feature-box text-center p-4 md:p-6 max-w-sm mx-auto border-2 border-solid border-gray-300 rounded md:h-full">
-                    <div class="text-xl p-4 w-16 h-16 mx-auto">
-                      <i class="fas fa-bolt text-indigo-600"></i>
-                    </div>
-                    <h5 class="text-xl font-medium mb-4">Fresh Design</h5>
-                    <p class="text-gray-600 mb-3">FWR blocks bring in an air of fresh design with their creative layouts and blocks, which are easily customizable.</p>
-                  </div>
-                </div>
-                <div class="px-4 md:w-1/3 mt-6 md:mt-0">
-                  <div class="feature-box text-center p-4 md:p-6 max-w-sm mx-auto border-2 border-solid border-gray-300 rounded md:h-full">
-                    <div class="text-xl p-4 w-16 h-16 mx-auto">
-                      <i class="fas fa-code text-indigo-600"></i>
-                    </div>
-                    <h5 class="text-xl font-medium mb-4">Clean Code</h5>
-                    <p class="text-gray-600 mb-3">FWR blocks are the cleanest pieces of HTML blocks, which are built with utmost care to quality and usability.</p>
-                  </div>
-                </div>
-                <div class="px-4 md:w-1/3 mt-6 md:mt-0">
-                  <div class="feature-box text-center p-4 md:p-6 max-w-sm mx-auto border-2 border-solid border-gray-300 rounded md:h-full">
-                    <div class="text-xl p-4 w-16 h-16 mx-auto">
-                      <i class="fas fa-wrench text-indigo-600"></i>
-                    </div>
-                    <h5 class="text-xl font-medium mb-4">Perfect Tool</h5>
-                    <p class="text-gray-600 mb-3">FWR blocks is a perfect tool for designers, developers and agencies looking to create stunning websites in no time.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> 
-
           
 
-        {{-- -------------------------------------------------------------------blog---------------------------------------------- --}}
 
         {{-- -------------------------------------------ifrem---------------------------------------------------- --}}
         <div class="">
@@ -588,9 +544,9 @@
                 width="1900" height="300" style="border:0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
-        {{-- ------------------------------------------------end ifrem------------------------------------------------- --}
+        {{--------------------------------------------------end ifrem------------------------------------------------- --}
 
-        {{-- --------------------------------------------------footer---------------------------------------------------- --}}
+        {{----------------------------------------------------footer---------------------------------------------------- --}}
 
         @include('layouts.footer')
 

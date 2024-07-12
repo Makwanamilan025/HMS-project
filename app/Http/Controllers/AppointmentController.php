@@ -104,8 +104,8 @@ class AppointmentController extends Controller
      */
     public function destroy(string $id)
     {
-        appointment::findOrFail($id)->delete();
-        return redirect()->route('appointment.index');
+        Appointment::findOrFail($id)->delete();
+        return redirect()->route('appointments.index');
     }
 
     public function confirm(Request $request, Appointment $appointment)

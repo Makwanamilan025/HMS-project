@@ -12,7 +12,7 @@
             </div>
             <ul class="flex flex-col py-4">
                 <li>
-                    <a href="{{ route('deshbord.index') }}"
+                    <a href="{{ route('dashboard.index') }}"
                         class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
                         <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"> <i
                                 class="fa-solid fa-house text-green-500"></i>
@@ -65,7 +65,7 @@
                         class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
                         <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i
                                 class="fa-solid fa-bed-pulse"></i></span>
-                        <span class="text-sm font-medium">patient</span>
+                        <span class="text-sm font-medium">Patients</span>
                     </a>
                 </li>
                 <li>
@@ -73,7 +73,7 @@
                         class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
                         <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i
                                 class="fa-solid fa-hand-holding-droplet text-red-600"></i></span>
-                        <span class="text-sm font-medium ">Blood banks</span>
+                        <span class="text-sm font-medium ">Blood bank</span>
                     </a>
                 </li>
                 {{-- <li>
